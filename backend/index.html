@@ -739,10 +739,14 @@ function initLocationOnce() {
       GeoDeviceBaseline.location = parsed;
       GeoDeviceBaseline.location_enabled = parsed.lat != null;
     } catch {
-      captureBaseline();
+      captureBaseline(() => {
+        window.dispatchEvent(new Event("locationUpdated"));
+      });
     }
   } else {
-    captureBaseline();
+    captureBaseline(() => {
+      window.dispatchEvent(new Event("locationUpdated"));
+    });
   }
 }
 
@@ -6363,6 +6367,17 @@ function LocationCard({ user }){
     if (GeoDeviceBaseline.location?.display) {
       setLoc(GeoDeviceBaseline.location.display);
     }
+  }, []);
+
+  // Re-render when location is captured after login
+  useEffect(() => {
+    const handler = () => {
+      if (GeoDeviceBaseline.location?.display) {
+        setLoc(GeoDeviceBaseline.location.display);
+      }
+    };
+    window.addEventListener("locationUpdated", handler);
+    return () => window.removeEventListener("locationUpdated", handler);
   }, []);
 
   function refreshLocation(){
