@@ -7815,19 +7815,6 @@ function FraudReportSuccessModal({ ticket, tx, onClose }) {
               <div style={{ fontSize: 20, fontWeight: 900, color: "#064e3b", letterSpacing: 1, fontFamily: "monospace" }}>{ticket.id}</div>
               <div style={{ fontSize: 11, color: "#047857", marginTop: 4 }}>CFCFRMS — Cyber Fraud Coordination Centre</div>
             </div>
-            {/* Status Grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 16 }}>
-              {[
-                { label: "Bank Notified", status: "✔ Sent", color: "#16a34a", bg: "#f0fdf4" },
-                { label: "Cyber Cell", status: "✔ Sent", color: "#16a34a", bg: "#f0fdf4" },
-                { label: "Under Review", status: "⏳ Active", color: "#d97706", bg: "#fffbeb" },
-              ].map(s => (
-                <div key={s.label} style={{ background: s.bg, border: "1px solid", borderColor: `${s.color}44`, borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
-                  <div style={{ fontSize: 16, marginBottom: 4 }}>{s.status.includes("✔") ? "✔" : "⏳"}</div>
-                  <div style={{ fontSize: 10, fontWeight: 800, color: s.color, textTransform: "uppercase" }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
             {/* Actions Initiated */}
             <div style={{ background: "#eff6ff", border: "1.5px solid #93c5fd", borderRadius: 14, padding: "14px 16px", marginBottom: 16 }}>
               <div style={{ fontWeight: 800, fontSize: 13, color: "#1e40af", marginBottom: 10 }}>Actions Initiated</div>
