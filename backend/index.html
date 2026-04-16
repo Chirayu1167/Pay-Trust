@@ -7704,9 +7704,9 @@ function getFraudSeverity(reason) {
   return "MEDIUM";
 }
 function getSeverityMeta(severity) {
-  if (severity === "HIGH") return { color: "#dc2626", bg: "#fef2f2", border: "#fca5a5", emoji: "🔴", label: "HIGH PRIORITY", badge: "#450a0a", resolution: "0–24 Hours", sublabel: "Fast-track Investigation" };
-  if (severity === "MEDIUM") return { color: "#d97706", bg: "#fffbeb", border: "#fcd34d", emoji: "🟡", label: "MEDIUM PRIORITY", badge: "#78350f", resolution: "2–5 Days", sublabel: "Standard Review" };
-  return { color: "#16a34a", bg: "#f0fdf4", border: "#86efac", emoji: "🟢", label: "LOW PRIORITY", badge: "#14532d", resolution: "1–3 Days", sublabel: "Processing" };
+  if (severity === "HIGH") return { color: "#dc2626", bg: "#fef2f2", border: "#fca5a5", emoji: "🔴", label: "Under Review", badge: "#450a0a", resolution: "0–24 Hours", sublabel: "Investigation Underway" };
+  if (severity === "MEDIUM") return { color: "#d97706", bg: "#fffbeb", border: "#fcd34d", emoji: "🟡", label: "Under Review", badge: "#78350f", resolution: "2–5 Days", sublabel: "Standard Review" };
+  return { color: "#16a34a", bg: "#f0fdf4", border: "#86efac", emoji: "🟢", label: "Under Review", badge: "#14532d", resolution: "1–3 Days", sublabel: "Processing" };
 }
 function generateRefId() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -7822,7 +7822,7 @@ function FraudReportSuccessModal({ ticket, tx, onClose }) {
                 <div style={{ fontWeight: 800, fontSize: 14, color: sm.color }}>{sm.label} CASE</div>
                 <div style={{ fontSize: 11, color: sm.color, opacity: 0.8, marginTop: 2 }}>{sm.sublabel} — Expected: {sm.resolution}</div>
               </div>
-              {sev === "HIGH" && <div style={{ marginLeft: "auto", background: "#fef2f2", border: "1px solid #fca5a5", borderRadius: 8, padding: "4px 10px", fontSize: 10, fontWeight: 800, color: "#dc2626" }}>⚡ FAST-TRACK</div>}
+              {sev === "HIGH" && <div style={{ marginLeft: "auto", background: "#fef2f2", border: "1px solid #fca5a5", borderRadius: 8, padding: "4px 10px", fontSize: 10, fontWeight: 800, color: "#dc2626" }}>⚡ Under Review</div>}
             </div>
             {/* Status Grid */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 16 }}>
