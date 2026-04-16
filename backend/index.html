@@ -30,73 +30,58 @@ body{font-family:'DM Sans',sans-serif;background:#eef4ff;overflow-x:hidden;}
 ::-webkit-scrollbar-thumb{background:rgba(0,120,255,.2);border-radius:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 
-/* ═══ ANIMATIONS ═══ */
-@keyframes spin      {to{transform:rotate(360deg)}}
-@keyframes shake     {0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
-@keyframes fadeUp    {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* ═══ SIMPLIFIED ANIMATIONS ═══ */
+@keyframes fadeUp    {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn    {from{opacity:0}to{opacity:1}}
-@keyframes slideInL  {from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideInR  {from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideDown {from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes scaleIn   {from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
-@keyframes pulse     {0%,100%{opacity:1}50%{opacity:.5}}
-@keyframes shimmer   {0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes scaleIn   {from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+@keyframes shake     {0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
 @keyframes drawCheck {to{stroke-dashoffset:0}}
-@keyframes float     {0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes gradMove  {0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@keyframes badgePop  {0%{transform:scale(0)}60%{transform:scale(1.3)}100%{transform:scale(1)}}
-@keyframes navSlide  {from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
-@keyframes countUp   {from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@keyframes bgPan     {0%{background-position:center center}100%{background-position:center 20%}}
-@keyframes progressFill {0%{width:0%}100%{width:100%}}
-@keyframes blink {0%,100%{opacity:1}50%{opacity:0.3}}
-@keyframes timerCountdown {from{width:100%}to{width:0%}}
+@keyframes pulse     {0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes slideDown {from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 
-/* ===== NEW: Service Card hover/click ===== */
+/* ═══ SERVICE CARD (simplified hover) ═══ */
 .svc-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
   padding:16px 8px;background:#fff;border-radius:18px;cursor:pointer;border:1.5px solid transparent;
-  transition:all .22s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 10px rgba(0,80,200,.06);}
-.svc-card:hover{transform:translateY(-4px) scale(1.04);border-color:#dbeafe;
-  box-shadow:0 12px 32px rgba(0,120,255,.16);background:linear-gradient(135deg,#f0f6ff,#fff);}
-.svc-card:active{transform:translateY(-1px) scale(.98);}
+  transition:all .2s ease;box-shadow:0 2px 10px rgba(0,80,200,.06);}
+.svc-card:hover{border-color:#dbeafe;box-shadow:0 8px 24px rgba(0,120,255,.12);}
+.svc-card:active{transform:scale(.98);}
 
-/* ===== NEW: Toast ===== */
-@keyframes toastPop{from{opacity:0;transform:translateX(-50%) translateY(16px) scale(.94)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+/* ═══ SIMPLIFIED TOAST ═══ */
+@keyframes toastPop{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .pt-toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);z-index:9999;
   background:#0f172a;color:#fff;padding:10px 22px;border-radius:24px;font-size:13px;font-weight:700;
-  white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.24);animation:toastPop .3s cubic-bezier(.16,1,.3,1);}
+  white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.24);animation:toastPop .25s ease;}
 
-/* ===== NEW: Category bar fill ===== */
-.cat-fill{transition:width .8s cubic-bezier(.4,0,.2,1);}
+/* ═══ CATEGORY BAR FILL (simplified) ═══ */
+.cat-fill{transition:width .6s ease;}
 
-/* ===== NEW: Insight chip ===== */
+/* ═══ INSIGHT CHIP (simplified) ═══ */
 .ins-chip{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;border-radius:14px;
-  font-size:13px;font-weight:600;animation:fadeUp .35s cubic-bezier(.16,1,.3,1) both;line-height:1.45;}
+  font-size:13px;font-weight:600;animation:fadeUp .25s ease both;line-height:1.45;}
 
-/* ===== NEW: Risk explainer tag ===== */
+/* ═══ RISK EXPLAINER TAG ═══ */
 .risk-tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;
   border-radius:16px;font-size:11px;font-weight:700;border:1.5px solid;}
 
-/* ═══ PAGE TRANSITION ═══ */
-.page-enter{animation:fadeUp .32s cubic-bezier(.16,1,.3,1) both;}
+/* ═══ PAGE TRANSITION (simplified) ═══ */
+.page-enter{animation:fadeUp .25s ease both;}
 
 /* ═══ GLASS CARD ═══ */
 .glass{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border:1px solid rgba(255,255,255,.75);box-shadow:0 4px 28px rgba(0,80,200,.07),0 1px 4px rgba(0,0,0,.04);}
 
-/* ═══ NAV ITEM HOVER ═══ */
-.nav-item{transition:all .18s cubic-bezier(.4,0,.2,1);}
-.nav-item:hover{background:rgba(0,120,255,.07)!important;color:var(--blue)!important;transform:translateX(2px);}
-.nav-item.active{animation:navSlide .25s ease;}
+/* ═══ NAV ITEM HOVER (simplified) ═══ */
+.nav-item{transition:all .15s ease;}
+.nav-item:hover{background:rgba(0,120,255,.07)!important;color:var(--blue)!important;}
 
-/* ═══ BTN HOVER ═══ */
-.btn-primary{transition:all .18s ease;}
-.btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,120,255,.38)!important;}
-.btn-primary:active:not(:disabled){transform:translateY(0);}
+/* ═══ BTN HOVER (simplified) ═══ */
+.btn-primary{transition:all .15s ease;}
+.btn-primary:hover:not(:disabled){box-shadow:0 6px 18px rgba(0,120,255,.32)!important;}
+.btn-primary:active:not(:disabled){transform:translateY(1px);}
 
-/* ═══ CARD HOVER ═══ */
+/* ═══ CARD HOVER (simplified) ═══ */
 .hover-lift{transition:transform .2s ease,box-shadow .2s ease;}
-.hover-lift:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,80,200,.12)!important;}
+.hover-lift:hover{box-shadow:0 8px 28px rgba(0,80,200,.12)!important;}
 
 /* ═══ CHAT QUICK REPLY BUTTONS ═══ */
 .quick-reply-btn{
@@ -120,17 +105,24 @@ body{font-family:'DM Sans',sans-serif;background:#eef4ff;overflow-x:hidden;}
   box-shadow:0 4px 12px rgba(0,120,255,.3);
 }
 
-/* ═══ RESPONSIVE ═══ */
+/* ═══ RESPONSIVE (mobile-first UX improvements) ═══ */
 @media(max-width:768px){
   #sidebar{display:none!important;}
   #bot-nav{display:flex!important;}
-  .page-pad{padding:16px 14px 88px!important;}
+  .page-pad{padding:16px 14px 94px!important;}
   .stats-3{grid-template-columns:1fr 1fr!important;}
   .stats-4{grid-template-columns:1fr 1fr!important;}
   .two-col{grid-template-columns:1fr!important;}
   .profile-3{grid-template-columns:1fr!important;}
   .sec-grid{grid-template-columns:1fr!important;}
-  .balance-amt{font-size:30px!important;}
+  .balance-amt{font-size:28px!important;}
+  /* Mobile: larger touch targets, minimum 48px height */
+  button, .btn-primary, input[type="button"], input[type="submit"]{min-height:48px;}
+  /* Mobile: bottom-fixed CTA bar */
+  .mobile-cta-bar{position:fixed;bottom:60px;left:0;right:0;padding:12px 16px;background:#fff;
+    box-shadow:0 -4px 20px rgba(0,0,0,.1);border-radius:16px 16px 0 0;z-index:100;}
+  /* Mobile: full-width inputs */
+  input, select{padding:14px 12px!important;font-size:16px!important;}
 }
 @media(min-width:769px){
   #bot-nav{display:none!important;}
@@ -645,7 +637,6 @@ function getDeviceInfo() {
 }
 
 // Capture baseline on login — call this once when user logs in
-// Stores location in localStorage so it's reused on subsequent renders
 function captureBaseline(onDone) {
   const deviceInfo = getDeviceInfo();
   const deviceId = deviceInfo.fingerprint;
@@ -703,9 +694,6 @@ function captureBaseline(onDone) {
   GeoDeviceBaseline.location.display = area
     ? `${area}, ${city}, ${state}`
     : `${city}, ${state}`;
-
-  // Persist location to localStorage for reuse on subsequent renders
-  localStorage.setItem("pt_user_location", JSON.stringify(GeoDeviceBaseline.location));
 })
           .catch(() => {
             GeoDeviceBaseline.location.city = "Unknown";
@@ -716,7 +704,6 @@ function captureBaseline(onDone) {
       () => {
         GeoDeviceBaseline.location_enabled = false;
         GeoDeviceBaseline.location = { city: "Permission denied", display: "Location off", lat: null, lng: null };
-        localStorage.setItem("pt_user_location", JSON.stringify(GeoDeviceBaseline.location));
         if (onDone) onDone();
       },
       { timeout: 8000 }
@@ -724,29 +711,7 @@ function captureBaseline(onDone) {
   } else {
     GeoDeviceBaseline.location_enabled = false;
     GeoDeviceBaseline.location = { city: "Unsupported", display: "Not supported", lat: null, lng: null };
-    localStorage.setItem("pt_user_location", JSON.stringify(GeoDeviceBaseline.location));
     if (onDone) onDone();
-  }
-}
-
-// Initialize location once — load from localStorage or capture if missing
-// Called after successful login; ensures location is NOT re-requested on dashboard/profile renders
-function initLocationOnce() {
-  const stored = localStorage.getItem("pt_user_location");
-  if (stored) {
-    try {
-      const parsed = JSON.parse(stored);
-      GeoDeviceBaseline.location = parsed;
-      GeoDeviceBaseline.location_enabled = parsed.lat != null;
-    } catch {
-      captureBaseline(() => {
-        window.dispatchEvent(new Event("locationUpdated"));
-      });
-    }
-  } else {
-    captureBaseline(() => {
-      window.dispatchEvent(new Event("locationUpdated"));
-    });
   }
 }
 
@@ -2826,22 +2791,27 @@ function RBIGuidelineModal({onClose}){
 }
 
 /* ═══ OTP MODAL ═══ */
+/* ═══ IMPROVED OTP MODAL — 120s timer, clear feedback, auto-focus ═══ */
 function OTPModal({mobile,onSuccess,onCancel}){
   const[digits,setDigits]=useState(["","","","","",""]);
   const[error,setError]=useState(false);
-  const[errMsg,setErrMsg]=useState("Invalid OTP.");
-  const[timer,setTimer]=useState(30);
+  const[errMsg,setErrMsg]=useState("");
+  const[timer,setTimer]=useState(120); // 120 seconds
   const[resend,setResend]=useState(false);
   const[loading,setLoad]=useState(false);
   const refs=[useRef(),useRef(),useRef(),useRef(),useRef(),useRef()];
 
+  // Auto-focus first input on mount
   useEffect(()=>{refs[0].current&&refs[0].current.focus();},[]);
+
+  // Countdown timer
   useEffect(()=>{
     if(timer<=0){setResend(true);return;}
     const t=setTimeout(()=>setTimer(p=>p-1),1000);
     return()=>clearTimeout(t);
   },[timer]);
-  /* Auto-send OTP as soon as this modal opens (skip for admin - uses static OTP) */
+
+  // Auto-send OTP on modal open (skip for admin)
   useEffect(()=>{
     if (mobile === "1234567890") return;
     fetch(`${API}/send-otp`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({mobile})}).catch(()=>{});
@@ -2850,6 +2820,7 @@ function OTPModal({mobile,onSuccess,onCancel}){
   function type(i,e){
     const v=e.target.value.replace(/\D/,"");
     const d=[...digits];d[i]=v;setDigits(d);
+    setError(false); // clear error on new input
     if(v&&i<5)refs[i+1].current&&refs[i+1].current.focus();
     if(d.every(x=>x))submit(d.join(""));
   }
@@ -2860,36 +2831,38 @@ function OTPModal({mobile,onSuccess,onCancel}){
     }
   }
   async function submit(code){
-    // Admin user - skip OTP server call, accept constant OTP 000000
-    if (mobile === "1234567890" && code === "000000") {
-      onSuccess();
-      return;
-    }
+    if (mobile === "1234567890" && code === "000000") { onSuccess(); return; }
     setLoad(true);
+    setError(false);
     try{
       const res=await fetch(`${API}/verify-otp`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({mobile,otp:code})});
       const data=await res.json();
       if(data.status==="SUCCESS"){onSuccess();}
       else{
-        setErrMsg(data.status==="OTP_EXPIRED"?"OTP expired. Resend.":"Invalid OTP.");
+        if(data.status==="OTP_EXPIRED") setErrMsg("OTP expired. Please resend.");
+        else setErrMsg("Invalid OTP. Please try again.");
         setError(true);
-        setTimeout(()=>{setError(false);setDigits(["","","","","",""]);refs[0].current&&refs[0].current.focus();},750);
+        setTimeout(()=>{setError(false);setDigits(["","","","","",""]);refs[0].current&&refs[0].current.focus();},800);
       }
     }catch(e){
-      setErrMsg("Server unreachable.");setError(true);
-      setTimeout(()=>{setError(false);setDigits(["","","","","",""]);},750);
+      setErrMsg("Server error. Please try again.");setError(true);
+      setTimeout(()=>{setError(false);setDigits(["","","","","",""]);},800);
     }finally{setLoad(false);}
   }
   async function resendOTP(){
     if (mobile === "1234567890") return;
-    setTimer(999); setResend(true);
+    setTimer(120); setResend(false);
+    setDigits(["","","","","",""]);
+    refs[0].current&&refs[0].current.focus();
     try{await fetch(`${API}/send-otp`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({mobile})});}catch(e){}
   }
 
-  useEffect(()=>{
-    document.body.style.overflow="hidden";
-    return()=>{document.body.style.overflow="";};
-  },[]);
+  useEffect(()=>{document.body.style.overflow="hidden";return()=>{document.body.style.overflow="";};},[]);
+
+  // Format timer display
+  const mins = Math.floor(timer/60);
+  const secs = timer%60;
+  const timerPct = (timer/120)*100;
 
   return(
     <Modal>
@@ -2899,8 +2872,9 @@ function OTPModal({mobile,onSuccess,onCancel}){
         <div style={{minHeight:"100%",display:"flex",alignItems:"center",justifyContent:"center",
           padding:"20px",boxSizing:"border-box"}}>
           <div style={{background:"#fff",borderRadius:24,width:"100%",maxWidth:380,
-            boxShadow:"0 32px 80px rgba(0,0,0,.28)",animation:"scaleIn .28s cubic-bezier(.16,1,.3,1)",
+            boxShadow:"0 32px 80px rgba(0,0,0,.28)",animation:"scaleIn .25s ease",
             overflow:"hidden",flexShrink:0}}>
+            {/* Header */}
             <div style={{background:`linear-gradient(135deg,#0078FF,#0055cc)`,padding:"20px 24px 16px",textAlign:"center"}}>
               <div style={{width:50,height:50,borderRadius:"50%",background:"rgba(255,255,255,.2)",
                 display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 10px"}}>
@@ -2910,9 +2884,23 @@ function OTPModal({mobile,onSuccess,onCancel}){
                 </svg>
               </div>
               <h3 style={{fontWeight:800,fontSize:18,color:"#fff",marginBottom:3}}>OTP Verification</h3>
-              <p style={{fontSize:12,color:"rgba(255,255,255,.75)"}}>6-digit code sent to +91 {mobile}</p>
+              <p style={{fontSize:12,color:"rgba(255,255,255,.75)"}}>Code sent to +91 {mobile}</p>
             </div>
+
             <div style={{padding:"20px 22px 22px"}}>
+              {/* Timer bar */}
+              <div style={{marginBottom:16}}>
+                <div style={{display:"flex",justifyContent:"space-between",fontSize:12,color:"#64748b",marginBottom:6}}>
+                  <span>{resend ? "Request new code" : `Valid for ${mins}:${secs.toString().padStart(2,'0')}`}</span>
+                  {resend ? null : <span style={{fontWeight:700,color:"#0078FF"}}>{Math.round(timerPct)}%</span>}
+                </div>
+                <div style={{height:4,background:"#e2e8f0",borderRadius:2,overflow:"hidden"}}>
+                  <div style={{height:"100%",width:`${timerPct}%`,background:timer > 30 ? "#22c55e" : timer > 10 ? "#f59e0b" : "#ef4444",
+                    borderRadius:2,transition:"width 1s linear, background .3s"}}/>
+                </div>
+              </div>
+
+              {/* OTP inputs */}
               <div style={{display:"flex",gap:8,justifyContent:"center",marginBottom:12,
                 animation:error?"shake .4s ease":"none"}}>
                 {digits.map((d,i)=>(
@@ -2925,16 +2913,35 @@ function OTPModal({mobile,onSuccess,onCancel}){
                       transition:"all .15s",boxSizing:"border-box"}}/>
                 ))}
               </div>
-              {error&&<p style={{color:"#dc2626",textAlign:"center",fontSize:13,marginBottom:10,fontWeight:600}}>{errMsg}</p>}
-              {loading&&<p style={{textAlign:"center",fontSize:13,color:"#0078FF",marginBottom:10,fontWeight:600,animation:"pulse 1s infinite"}}>Verifying…</p>}
+
+              {/* Error message */}
+              {error&&<p style={{color:"#dc2626",textAlign:"center",fontSize:13,marginBottom:10,fontWeight:600,
+                animation:"fadeIn .2s ease"}}>{errMsg}</p>}
+
+              {/* Loading indicator */}
+              {loading&&<p style={{textAlign:"center",fontSize:13,color:"#0078FF",marginBottom:10,fontWeight:600,
+                animation:"pulse 1s infinite"}}>Verifying…</p>}
+
+              {/* Resend section */}
               <div style={{textAlign:"center",color:"#94a3b8",fontSize:13,marginBottom:16}}>
-                {resend
-                  ?<button onClick={resendOTP} style={{background:"none",border:"none",color:"#0078FF",
-                    fontSize:13,cursor:"pointer",fontWeight:700,fontFamily:"'DM Sans',sans-serif"}}>
-                    Resend OTP →</button>
-                  :`Resend in ${timer}s`}
+                {resend ? (
+                  <button onClick={resendOTP} style={{background:"none",border:"none",color:"#0078FF",
+                    fontSize:13,cursor:"pointer",fontWeight:700,fontFamily:"'DM Sans',sans-serif",padding:0}}>
+                    Resend OTP
+                  </button>
+                ) : (
+                  <span>Didn't receive it? <button onClick={resendOTP} style={{background:"none",border:"none",
+                    color:"#0078FF",fontSize:13,cursor:"pointer",fontWeight:700,fontFamily:"'DM Sans',sans-serif",padding:0}}>
+                    Resend
+                  </button></span>
+                )}
               </div>
-              <Btn onClick={onCancel} variant="ghost" fullWidth>Cancel</Btn>
+
+              <button onClick={onCancel} style={{width:"100%",padding:"12px",background:"#f1f5f9",
+                border:"1px solid #e2e8f0",borderRadius:12,color:"#64748b",fontWeight:600,fontSize:14,
+                cursor:"pointer",fontFamily:"'DM Sans',sans-serif",transition:"all .15s"}}>
+                Cancel
+              </button>
             </div>
           </div>
         </div>
@@ -3327,385 +3334,222 @@ function OutOfBandVerificationModal({ recipientName, recipientNum, inContacts, o
 // === End Out-of-Band Verification Feature ===
 
 /* ═══ FRAUD RISK CARD with PIN+OTP for suspicious ═══ */
+/* ═══ SIMPLIFIED FRAUD RISK CARD — 3-STATE UX ═══ */
 function FraudRiskCard({score, recipient, recipientNum, amount, signals, onVerify, onCancel, onReport, tier, kwMatched=[], urgencyHits=[], urgencyScore=0}){
-  const [countdown, setCountdown] = useState(10);
-  const [timerActive, setTimerActive] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
-  useEffect(() => {
-    if (score >= 90) {
-      setCountdown(10);
-      setTimerActive(true);
-    } else {
-      setTimerActive(false);
-    }
-  }, [score]);
+  // ═══ 3-STATE SYSTEM: SAFE / VERIFY / BLOCKED ═══
+  const isSafe    = score < 60;
+  const isVerify  = score >= 60 && score < 85;
+  const isBlocked = score >= 85;
 
-  useEffect(() => {
-    if (!timerActive) return;
-    if (countdown <= 0) { setTimerActive(false); return; }
-    const t = setTimeout(() => setCountdown(c => c - 1), 1000);
-    return () => clearTimeout(t);
-  }, [timerActive, countdown]);
+  // Human-readable status
+  const status = isSafe ? 'SAFE' : isVerify ? 'VERIFY' : 'BLOCKED';
+  const statusColor = isSafe ? '#22c55e' : isVerify ? '#f59e0b' : '#ef4444';
+  const statusBg    = isSafe ? '#dcfce7' : isVerify ? '#fef3c7' : '#fef2f2';
+  const statusBorder= isSafe ? '#86efac' : isVerify ? '#fcd34d' : '#fca5a5';
 
-  const m=riskMeta(score);
-  const R=36,cx=52,cy=52;
-  const sa=Math.PI*.75,sw=Math.PI*1.5*(score/100);
-  function p2r(a){return{x:cx+R*Math.cos(a),y:cy+R*Math.sin(a)};}
-  function arc(from,to){
-    const f=p2r(from),t=p2r(to),lg=(to-from)>Math.PI?1:0;
-    return`M ${f.x} ${f.y} A ${R} ${R} 0 ${lg} 1 ${t.x} ${t.y}`;
+  // Status messages — human, non-technical
+  const statusMessages = {
+    SAFE: "This looks safe based on your activity",
+    VERIFY: "This needs extra verification",
+    BLOCKED: "This payment has been blocked"
+  };
+
+  // Simplified "why" messages — human-readable only
+  const whyMessages = [];
+  if (signals && signals.length > 0) {
+    signals.forEach(s => {
+      const sl = s.toLowerCase();
+      if (sl.includes("new recipient") || sl.includes("not in your contacts")) whyMessages.push("New recipient");
+      else if (sl.includes("high amount") || sl.includes("unusually high") || sl.includes("higher than your usual")) whyMessages.push("Unusual amount");
+      else if (sl.includes("reported")) whyMessages.push("Reported by others");
+      else if (sl.includes("off-network") || sl.includes("outside the upi")) whyMessages.push("Outside trusted network");
+      else if (sl.includes("odd hour") || sl.includes("late-night") || sl.includes("unusual time")) whyMessages.push("Unusual time");
+      else if (sl.includes("drain") || sl.includes("balance")) whyMessages.push("Large portion of balance");
+    });
   }
 
-  // 90+ score → button becomes "Verify with OTP"
-  // Below 90 → "Pay with PIN →"  (OTP is still triggered internally for otp/high_risk tier)
-  const useOTPButton = score >= 90;
+  // Dedupe messages
+  const uniqueWhy = [...new Set(whyMessages)].slice(0, 3);
 
-  // Determine the correct title based on tier
-  let title = '';
-  if (tier === 'normal') title = '🟢 Safe Transaction';
-  else if (tier === 'info') title = '🟡 Caution — Low Risk';
-  else if (tier === 'otp') title = '🟠 Suspicious Payment Detected';
-  else if (tier === 'high_risk') title = '🔴 High Risk Transaction';
+  // Primary CTA based on state
+  const ctaLabel = isSafe ? 'Pay Now' : isVerify ? 'Verify & Pay' : 'Cancel Payment';
+  const ctaAction = isBlocked ? onCancel : onVerify;
+  const ctaColor = isSafe ? '#22c55e' : isVerify ? '#0078FF' : '#ef4444';
 
   return(
-    <Card style={{padding:0,overflow:"hidden",border:`1.5px solid ${m.border}`}}>
-      <div style={{height:4,background:`linear-gradient(90deg,${m.dot},${m.color})`,borderRadius:"18px 18px 0 0"}}/>
+    <Card style={{padding:0, overflow:"hidden", border:`2px solid ${statusBorder}`}}>
+      {/* ── Status accent bar ── */}
+      <div style={{height:5, background:`linear-gradient(90deg,${statusColor},${isVerify ? '#f59e0b' : statusColor})`, borderRadius:"18px 18px 0 0"}}/>
+
       <div style={{padding:"20px 22px"}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:16}}>
-          <div>
-            <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-              {Ic.warn(m.dot)}
-              <span style={{fontWeight:800,fontSize:15,color:m.color}}>
-                {title}
-              </span>
-            </div>
-            <p style={{fontSize:12,color:"#94a3b8"}}>AI Fraud Risk Score</p>
+        {/* ═══ HEADER: Amount + Status (visual hierarchy: amount is largest) ═══ */}
+        <div style={{textAlign:"center", marginBottom:18}}>
+          <div style={{fontSize:13, color:"#94a3b8", marginBottom:6}}>You're paying</div>
+          <div style={{fontSize:36, fontWeight:800, color:"#0f172a", lineHeight:1.1}}>
+            ₹{Number(amount).toLocaleString("en-IN")}
           </div>
-          <svg width="88"height="74"viewBox="0 0 104 80">
-            <path d={arc(sa,sa+Math.PI*1.5)} fill="none" stroke="#f1f5f9" strokeWidth="10" strokeLinecap="round"/>
-            {score>0&&<path d={arc(sa,sa+sw)} fill="none" stroke={m.dot} strokeWidth="10" strokeLinecap="round"/>}
-            <text x={cx} y={cy+4} textAnchor="middle" fontSize="20" fontWeight="800" fill={m.color} fontFamily="DM Sans">{score}</text>
-            <text x={cx} y={cy+18} textAnchor="middle" fontSize="9" fill="#94a3b8" fontFamily="DM Sans">/100</text>
-          </svg>
+          <div style={{fontSize:14, color:"#64748b", marginTop:6}}>to {recipient}</div>
         </div>
-        <div style={{background:"#f8faff",borderRadius:12,padding:"14px 16px",marginBottom:14}}>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
-            <span style={{fontSize:13,color:"#64748b"}}>Sending to</span>
-            <span style={{fontSize:13,fontWeight:700,color:"#0f172a"}}>{recipient}</span>
-          </div>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-            <span style={{fontSize:13,color:"#64748b"}}>Amount</span>
-            <span style={{fontSize:19,fontWeight:800,color:"#0f172a"}}>₹{Number(amount).toLocaleString("en-IN")}</span>
-          </div>
+
+        {/* ═══ RISK STATUS BADGE (dominant visual element) ═══ */}
+        <div style={{
+          display:"flex", alignItems:"center", justifyContent:"center", gap:10,
+          padding:"14px 20px", background:statusBg,
+          border:`2px solid ${statusBorder}`, borderRadius:14, marginBottom:16
+        }}>
+          <div style={{
+            width:12, height:12, borderRadius:"50%", background:statusColor,
+            boxShadow:`0 0 0 3px ${statusColor}30`
+          }}/>
+          <span style={{fontSize:16, fontWeight:800, color:statusColor, letterSpacing:.5}}>
+            {status === 'SAFE' ? '✓ ' + status : status === 'VERIFY' ? '⚠ ' + status : '✕ ' + status}
+          </span>
         </div>
-        <div style={{marginBottom:14}}>
-          <div style={{height:6,background:"#f1f5f9",borderRadius:3,overflow:"hidden"}}>
-            <div style={{height:"100%",width:`${score}%`,background:`linear-gradient(90deg,#22c55e,${m.dot})`,
-              borderRadius:3,transition:"width .7s cubic-bezier(.4,0,.2,1)"}}/>
+
+        {/* ═══ TRUST MESSAGE (only for SAFE) ═══ */}
+        {isSafe && (
+          <div style={{
+            padding:"12px 16px", background:"#f0fdf4", border:"1px solid #bbf7d0",
+            borderRadius:10, marginBottom:16, textAlign:"center"
+          }}>
+            <span style={{fontSize:13, color:"#166534", fontWeight:600}}>
+              {statusMessages.SAFE}
+            </span>
           </div>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:"#cbd5e1",marginTop:3}}>
-            <span>🟢 Safe (0–60)</span><span>🟡 (61–80)</span><span>🟠 (81–94)</span><span>🔴 (95+)</span>
-          </div>
-        </div>
-        {/* ===== Network Fraud Intelligence — recipient report count ===== */}
-        {recipientNum&&getRecipientRisk(recipientNum)>=1&&(
-          <div style={{marginBottom:12}}>
-            <div style={{padding:"10px 14px",background:"#fef2f2",border:"1px solid #fca5a5",
-              borderRadius:10,display:"flex",alignItems:"center",gap:8,marginBottom:getRecipientRisk(recipientNum)>3?6:0}}>
-              {Ic.warn("#dc2626")}
-              <span style={{fontSize:13,color:"#dc2626",fontWeight:600}}>
-                ⚠ Reported {getRecipientRisk(recipientNum)} time{getRecipientRisk(recipientNum)>1?"s":""} in our network
-              </span>
-            </div>
-            {getRecipientRisk(recipientNum)>3&&(
-              <div style={{padding:"8px 14px",background:"#450a0a",border:"1.5px solid #dc2626",
-                borderRadius:10,display:"flex",alignItems:"center",gap:8}}>
-                <span style={{fontSize:14}}>🚨</span>
-                <span style={{fontSize:13,color:"#fca5a5",fontWeight:700}}>
-                  High-risk recipient — multiple users have flagged this account
+        )}
+
+        {/* ═══ SIMPLIFIED "WHY" SECTION (only for non-safe) ═══ */}
+        {uniqueWhy.length > 0 && !isSafe && (
+          <div style={{marginBottom:16}}>
+            <div style={{display:"flex", flexWrap:"wrap", gap:6, justifyContent:"center"}}>
+              {uniqueWhy.map((msg, i) => (
+                <span key={i} style={{
+                  padding:"6px 14px", background:"#fff7ed", border:"1px solid #fdba74",
+                  borderRadius:20, fontSize:12, fontWeight:700, color:"#92400e"
+                }}>
+                  {msg}
                 </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ═══ NETWORK WARNING (if reported) ═══ */}
+        {recipientNum && getRecipientRisk(recipientNum) >= 1 && !isSafe && (
+          <div style={{
+            padding:"10px 14px", background:"#fef2f2", border:"1px solid #fca5a5",
+            borderRadius:10, marginBottom:16, display:"flex", alignItems:"center", gap:8
+          }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2.5">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span style={{fontSize:13, color:"#dc2626", fontWeight:600}}>
+              Reported {getRecipientRisk(recipientNum)}× in our network
+            </span>
+          </div>
+        )}
+
+        {/* ═══ DOMINANT PRIMARY ACTION BUTTON ═══ */}
+        {isBlocked ? (
+          <div style={{display:"flex", gap:10}}>
+            <button onClick={onCancel}
+              style={{flex:1, padding:"16px", background:"#f1f5f9", border:"1.5px solid #e2e8f0",
+                borderRadius:14, color:"#64748b", fontWeight:700, fontSize:15, cursor:"pointer",
+                fontFamily:"'DM Sans',sans-serif", transition:"all .15s"}}>
+              Cancel Payment
+            </button>
+            <button onClick={onReport}
+              style={{padding:"16px 20px", background:"#fef2f2", border:"1px solid #fca5a5",
+                borderRadius:14, color:"#dc2626", fontWeight:700, fontSize:15, cursor:"pointer",
+                fontFamily:"'DM Sans',sans-serif", transition:"all .15s"}}>
+              Report
+            </button>
+          </div>
+        ) : (
+          <button onClick={ctaAction} className="btn-primary"
+            style={{width:"100%", padding:"16px", background:`linear-gradient(135deg,${ctaColor},${isVerify ? '#d97706' : ctaColor})`,
+              border:"none", borderRadius:14, color:"#fff", fontWeight:700, fontSize:16, cursor:"pointer",
+              fontFamily:"'DM Sans',sans-serif", boxShadow:`0 6px 20px ${ctaColor}40`}}>
+            {ctaLabel}
+          </button>
+        )}
+
+        {/* ═══ PROGRESSIVE DISCLOSURE: View Details toggle ═══ */}
+        <div style={{marginTop:16, textAlign:"center"}}>
+          <button onClick={() => setShowDetails(!showDetails)}
+            style={{background:"none", border:"none", color:"#0078FF", fontSize:13, fontWeight:700,
+              cursor:"pointer", fontFamily:"'DM Sans',sans-serif", display:"inline-flex", alignItems:"center", gap:4}}>
+            {showDetails ? 'Hide Details' : 'View Details'}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+              style={{transform: showDetails ? 'rotate(180deg)' : 'none', transition:'transform .2s'}}>
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* ═══ EXPANDED DETAILS (hidden by default — progressive disclosure) ═══ */}
+        {showDetails && (
+          <div style={{marginTop:16, paddingTop:16, borderTop:"1px solid #e2e8f0", animation:"fadeUp .2s ease"}}>
+            {/* Technical score (de-emphasized) */}
+            <div style={{textAlign:"center", marginBottom:14}}>
+              <span style={{fontSize:11, color:"#94a3b8", fontWeight:600}}>Risk Score: </span>
+              <span style={{fontSize:13, fontWeight:800, color:statusColor}}>{score}/100</span>
+            </div>
+
+            {/* Full signals list */}
+            {signals && signals.length > 0 && (
+              <div style={{marginBottom:14}}>
+                <p style={{fontSize:11, fontWeight:800, color:"#94a3b8", textTransform:"uppercase",
+                  letterSpacing:.8, marginBottom:8}}>Risk Analysis</p>
+                {signals.slice(0, 5).map((s, i) => (
+                  <div key={i} style={{
+                    display:"flex", alignItems:"flex-start", gap:8, marginBottom:6,
+                    padding:"8px 10px", background:"#f8faff", borderRadius:8,
+                    fontSize:12, color:"#475569", lineHeight:1.4
+                  }}>
+                    <svg width="6" height="6" style={{flexShrink:0, marginTop:5}}>
+                      <circle cx="3" cy="3" r="3" fill={statusColor}/>
+                    </svg>
+                    {s}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Urgency warning */}
+            {urgencyHits && urgencyHits.length > 0 && (
+              <div style={{padding:"10px 12px", background:"#fff7ed", border:"1px solid #f97316",
+                borderRadius:10, marginBottom:14}}>
+                <p style={{fontSize:12, fontWeight:700, color:"#9a3412", marginBottom:4}}>
+                  ⚡ Urgency tactics detected
+                </p>
+                <p style={{fontSize:11, color:"#92400e", margin:0}}>
+                  Keywords: {urgencyHits.slice(0, 3).map(h => `"${h}"`).join(", ")}
+                </p>
+              </div>
+            )}
+
+            {/* Report link for blocked */}
+            {!isBlocked && (
+              <div style={{textAlign:"center"}}>
+                <button onClick={onReport}
+                  style={{background:"none", border:"none", color:"#dc2626", fontSize:12, fontWeight:600,
+                    cursor:"pointer", fontFamily:"'DM Sans',sans-serif", padding:0}}>
+                  Report this recipient
+                </button>
               </div>
             )}
           </div>
         )}
-
-        {/* ===== ENGINE INSIGHTS + WHY IS THIS RISKY — clean 3-layer separation ===== */}
-        {(()=>{
-          // Build explanation from getRiskExplanation (if user context available via recipientNum)
-          // We also incorporate the existing signals[] for full engine detail
-          // LAYER 1 — Engine Insights: full technical sentences from the fraud engine
-          // LAYER 2 — Why is this risky?: short human reasons from getRiskExplanation
-          // LAYER 3 — Tags: 1-2 word chips
-          // No signal repeats across layers.
-
-          // Collect all engine insight sentences (existing signals array, deduplicated)
-          const engineInsights = signals ? [...new Set(signals)] : [];
-
-          // Build explanation layers from recipientNum context
-          const rr = recipientNum ? getRecipientRisk(recipientNum) : 0;
-          const whyReasons = [];
-          const whyTags    = [];
-
-          // Network
-          if (rr > 0) {
-            whyReasons.push(`Reported by ${rr} user${rr > 1 ? "s" : ""}`);
-            whyTags.push("Reported");
-          }
-
-          // Parse short reasons from signals — avoid duplicating what engine insights say
-          if (signals) {
-            signals.forEach(s => {
-              const sl = s.toLowerCase();
-              if ((sl.includes("new recipient") || sl.includes("not seen in your contacts")) &&
-                  !whyReasons.some(r => r.toLowerCase().includes("new recipient"))) {
-                whyReasons.push("New recipient");
-                whyTags.push("New");
-              }
-              if ((sl.includes("drain") || sl.includes("large transfer") || sl.includes("higher than your usual") || sl.includes("unusually far outside")) &&
-                  !whyReasons.some(r => r.toLowerCase().includes("amount") || r.toLowerCase().includes("spend"))) {
-                whyReasons.push("High amount");
-                if (!whyTags.includes("High Amount")) whyTags.push("High Amount");
-              }
-              if ((sl.includes("daily spending") || sl.includes("starting balance") || sl.includes("portion")) &&
-                  !whyReasons.some(r => r.toLowerCase().includes("spend") || r.toLowerCase().includes("balance"))) {
-                whyReasons.push("Large spend");
-                if (!whyTags.includes("Large Spend")) whyTags.push("Large Spend");
-              }
-              if ((sl.includes("off-network") || sl.includes("outside the upi network") || sl.includes("outside the trusted")) &&
-                  !whyReasons.some(r => r.toLowerCase().includes("off-network") || r.toLowerCase().includes("network"))) {
-                whyReasons.push("Off-network account");
-                if (!whyTags.includes("Off-Network")) whyTags.push("Off-Network");
-              }
-              if ((sl.includes("late-night") || sl.includes("odd hour") || sl.includes("unusual time") || sl.includes("1–5")) &&
-                  !whyReasons.some(r => r.toLowerCase().includes("hour"))) {
-                whyReasons.push("Odd hour");
-                if (!whyTags.includes("Odd Hour")) whyTags.push("Odd Hour");
-              }
-            });
-          }
-
-          const dedupeReasons = [...new Set(whyReasons)];
-          const dedupeTags    = [...new Set(whyTags)];
-
-          const TAG_STYLE = (tag) => {
-            const map = {
-              "Reported":    {c:"#dc2626", bg:"#fef2f2", bd:"#fca5a5"},
-              "New":         {c:"#f59e0b", bg:"#fef3c7", bd:"#fcd34d"},
-              "High Amount": {c:"#f97316", bg:"#fff7ed", bd:"#fdba74"},
-              "Large Spend": {c:"#ea580c", bg:"#fff7ed", bd:"#fb923c"},
-              "Odd Hour":    {c:"#7c3aed", bg:"#f5f3ff", bd:"#c4b5fd"},
-              "Off-Network": {c:"#0369a1", bg:"#e0f2fe", bd:"#7dd3fc"},
-            };
-            return map[tag] || {c:"#64748b", bg:"#f8faff", bd:"#e2e8f0"};
-          };
-
-          return (
-            <>
-              {/* 10-SECOND COUNTDOWN TIMER — shown when risk score >= 85 */}
-              {score >= 85 && (
-                <div style={{
-                  padding:"12px 16px",
-                  background:"linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%)",
-                  border:"2px solid #f97316",
-                  borderRadius:12,
-                  marginBottom:16,
-                  display:"flex",
-                  alignItems:"center",
-                  justifyContent:"space-between",
-                  gap:12,
-                  animation:"slideInL .3s ease both"
-                }}>
-                  <div style={{display:"flex",alignItems:"center",gap:10}}>
-                    <span style={{fontSize:22}}>⏱️</span>
-                    <div>
-                      <p style={{fontSize:13,fontWeight:800,color:"#9a3412",margin:0,lineHeight:1.3}}>
-                        High Risk — 10 Second Review Required
-                      </p>
-                      <p style={{fontSize:11,color:"#92400e",margin:"3px 0 0",fontWeight:500}}>
-                        Please review all details carefully before proceeding
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{
-                    width:48,height:48,borderRadius:"50%",
-                    background:"#fff",
-                    border:"3px solid #f97316",
-                    display:"flex",alignItems:"center",justifyContent:"center",
-                    fontSize:22,fontWeight:900,color:"#f97316",
-                    boxShadow:"0 2px 8px rgba(249,115,22,.3)",
-                    flexShrink:0
-                  }}>
-                    {countdown}
-                  </div>
-                </div>
-              )}
-
-              {/* SECTION 1: Engine Insights — full technical sentences */}
-              {engineInsights.length > 0 && (
-                <div style={{marginBottom:14}}>
-                  <p style={{fontSize:11,fontWeight:800,color:"#94a3b8",textTransform:"uppercase",
-                    letterSpacing:.8,marginBottom:8}}>
-                    🔍 Engine Insights
-                  </p>
-                  {engineInsights.slice(0,6).map((s,i)=>{
-                    const isKW = s.startsWith("⚠️") || s.startsWith("🚨");
-                    return(
-                      <div key={i} style={{display:"flex",alignItems:"flex-start",gap:8,marginBottom:6,
-                        padding:"7px 10px",
-                        background:isKW?"#fff7ed":m.bg,
-                        borderRadius:8,border:`1px solid ${isKW?"#fdba74":m.border}`,
-                        animation:`slideInL .2s ${i*.06}s ease both`}}>
-                        <svg width="6"height="6"style={{flexShrink:0,marginTop:5}}>
-                          <circle cx="3"cy="3"r="3"fill={isKW?"#f59e0b":m.dot}/>
-                        </svg>
-                        <span style={{fontSize:13,color:isKW?"#92400e":m.color,
-                          fontWeight:isKW?600:500,lineHeight:1.4}}>{s}</span>
-                      </div>
-                    );
-                  })}
-
-                  {/* Urgency Detection — kept inside Engine Insights, no duplication */}
-                  {urgencyHits.length>0&&(
-                    <div style={{marginTop:8,padding:"10px 14px",background:"#fff7ed",
-                      border:"1.5px solid #f97316",borderRadius:10,
-                      display:"flex",alignItems:"flex-start",gap:10,
-                      animation:"slideInL .25s ease both"}}>
-                      <span style={{fontSize:18,flexShrink:0}}>⚡</span>
-                      <div>
-                        <p style={{fontSize:13,fontWeight:700,color:"#9a3412",marginBottom:4,lineHeight:1.4}}>
-                          ⚠️ This request uses urgency tactics often seen in scams
-                        </p>
-                        <p style={{fontSize:11,color:"#92400e",fontWeight:500,lineHeight:1.4,margin:0}}>
-                          Detected: {urgencyHits.slice(0,4).map(h=>`"${h}"`).join(", ")}
-                          {urgencyHits.length>4?` +${urgencyHits.length-4} more`:""}
-                          {" "}— Scammers often create false urgency to bypass your judgement.
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* UPI Keyword badges — kept inside Engine Insights */}
-                  {kwMatched.length>0&&(
-                    <div style={{marginTop:10,padding:"10px 12px",
-                      background:kwMatched.some(k=>k.tier==="critical")?"#fff1f2":"#fff7ed",
-                      borderRadius:10,
-                      border:kwMatched.some(k=>k.tier==="critical")?"1px solid #fda4af":"1px solid #fdba74"}}>
-                      <p style={{fontSize:10,fontWeight:800,
-                        color:kwMatched.some(k=>k.tier==="critical")?"#881337":"#92400e",
-                        textTransform:"uppercase",letterSpacing:.7,marginBottom:7}}>
-                        🔍 Flagged UPI Keywords
-                      </p>
-                      <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
-                        {kwMatched.map((kw,i)=>{
-                          const chipColor=kw.tier==="critical"?"#9f1239":kw.tier==="high"?"#dc2626":kw.tier==="medium"?"#f97316":"#f59e0b";
-                          const chipBg=kw.tier==="critical"?"#fff1f2":kw.tier==="high"?"#fef2f2":kw.tier==="medium"?"#fff7ed":"#fefce8";
-                          const chipBord=kw.tier==="critical"?"#fda4af":kw.tier==="high"?"#fca5a5":kw.tier==="medium"?"#fdba74":"#fde68a";
-                          const tierLabel=kw.tier==="critical"?"🚨 CRIT":kw.tier==="high"?"HIGH":kw.tier==="medium"?"MED":"LOW";
-                          return(
-                            <span key={i} title={kw.desc} style={{display:"inline-flex",alignItems:"center",gap:4,
-                              padding:"3px 10px",borderRadius:20,fontSize:12,fontWeight:700,
-                              background:chipBg,color:chipColor,border:`1.5px solid ${chipBord}`}}>
-                              <svg width="7"height="7"><circle cx="3.5"cy="3.5"r="3.5"fill={chipColor}/></svg>
-                              {kw.canonical}
-                              <span style={{fontSize:10,opacity:.75,fontWeight:600}}>{tierLabel}</span>
-                            </span>
-                          );
-                        })}
-                      </div>
-                      <p style={{fontSize:10,color:"#94a3b8",marginTop:7,lineHeight:1.4}}>
-                        Hover a badge for scam description · Keywords are weighted by fraud frequency
-                      </p>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* SECTION 2: Why is this risky? — short human reasons only */}
-              {dedupeReasons.length > 0 && score >= 60 && (
-                <div style={{marginBottom:14,padding:"12px 14px",background:"#fff7ed",
-                  border:"1.5px solid #fdba74",borderRadius:12,animation:"slideInL .3s ease both"}}>
-                  <p style={{fontSize:11,fontWeight:800,color:"#92400e",textTransform:"uppercase",
-                    letterSpacing:.7,marginBottom:8}}>
-                    🤔 Why is this risky?
-                  </p>
-                  {dedupeReasons.map((r,i)=>(
-                    <div key={i} style={{display:"flex",alignItems:"flex-start",gap:7,marginBottom:5,
-                      fontSize:13,color:"#9a3412",fontWeight:600,lineHeight:1.4}}>
-                      <span style={{flexShrink:0,marginTop:1}}>⚠</span><span>{r}</span>
-                    </div>
-                  ))}
-
-                  {/* 💡 Test-Payment Suggestion for very high risk (score >= 90) */}
-                  {score >= 90 && (
-                    <div style={{marginTop:12,padding:"10px 12px",background:"#f0f9ff",
-                      border:"1.5px solid #38bdf8",borderRadius:10,
-                      display:"flex",alignItems:"flex-start",gap:10,
-                      animation:"slideInL .25s ease both"}}>
-                      <span style={{fontSize:18,flexShrink:0}}>💡</span>
-                      <div>
-                        <p style={{fontSize:13,fontWeight:700,color:"#0369a1",marginBottom:3,lineHeight:1.4}}>
-                          Try confirming with a ₹1 test payment first
-                        </p>
-                        <p style={{fontSize:11,color:"#075985",fontWeight:500,lineHeight:1.4,margin:0}}>
-                          For high-risk payments, sending a small ₹1 amount helps verify the recipient's UPI ID is active and owned by the correct person — before committing the full amount.
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* SECTION 3: Tag chips — 1-2 word labels only */}
-                  {dedupeTags.length > 0 && (
-                    <div style={{display:"flex",flexWrap:"wrap",gap:5,marginTop:10}}>
-                      {dedupeTags.map((tag,i)=>{
-                        const ts = TAG_STYLE(tag);
-                        return(
-                          <span key={i} style={{display:"inline-flex",alignItems:"center",gap:4,
-                            padding:"3px 10px",borderRadius:16,fontSize:11,fontWeight:700,
-                            background:ts.bg,color:ts.c,border:`1.5px solid ${ts.bd}`}}>
-                            {tag}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              )}
-            </>
-          );
-        })()}
-
-
-        {/* ===== 90+ WARNING: Extra caution text above button ===== */}
-        {score >= 90 && (
-          <div style={{marginBottom:12,padding:"10px 14px",background:"#fef2f2",
-            border:"2px solid #dc2626",borderRadius:10,textAlign:"center"}}>
-            <p style={{fontSize:14,fontWeight:800,color:"#dc2626",margin:0}}>
-              ⚠️ BE EXTRA CAREFUL: This transaction has multiple high-risk signals.
-            </p>
-          </div>
-        )}
-
-        <div style={{display:"flex",gap:10}}>
-          <button onClick={onVerify} className="btn-primary"
-            style={{flex:1,padding:"12px",background:`linear-gradient(135deg,#0078FF,#0055cc)`,border:"none",
-              borderRadius:12,color:"#fff",fontWeight:700,fontSize:14,cursor:"pointer",
-              fontFamily:"'DM Sans',sans-serif",boxShadow:"0 4px 14px rgba(0,120,255,.28)"}}>
-            {useOTPButton ? "Verify with OTP →" : "Pay with PIN →"}
-          </button>
-          <button onClick={onReport}
-            style={{padding:"12px 18px",background:"#fef2f2",border:"1px solid #fecaca",borderRadius:12,
-              color:"#dc2626",cursor:"pointer",fontSize:14,fontFamily:"'DM Sans',sans-serif",fontWeight:600,transition:"all .15s"}}
-            onMouseEnter={e=>e.target.style.background="#fee2e2"}
-            onMouseLeave={e=>e.target.style.background="#fef2f2"}>
-            {Ic.flag("#dc2626")} Report
-          </button>
-        </div>
       </div>
     </Card>
   );
 }
 
-/* ===== FEATURE 3: Smart Delay Modal — psychological warning + animated countdown ===== */
+/* ═══ SMART DELAY MODAL ═══ */
 function SmartDelayModal({amount, onConfirm, onCancel}){
   const DELAY=10;
   const[secs,setSecs]=useState(DELAY);
@@ -3733,38 +3577,27 @@ function SmartDelayModal({amount, onConfirm, onCancel}){
         display:"flex",alignItems:"center",justifyContent:"center",padding:20}}>
         <div style={{background:"#fff",borderRadius:24,maxWidth:400,width:"100%",
           padding:"32px 28px",textAlign:"center",
-          boxShadow:"0 32px 80px rgba(0,0,0,.28)",animation:"scaleIn .28s cubic-bezier(.16,1,.3,1)"}}>
+          boxShadow:"0 32px 80px rgba(0,0,0,.28)",animation:"scaleIn .25s ease"}}>
 
           {/* Icon */}
-          <div style={{width:72,height:72,borderRadius:"50%",
+          <div style={{width:64,height:64,borderRadius:"50%",
             background:"linear-gradient(135deg,#fff7ed,#fef3c7)",
             display:"flex",alignItems:"center",justifyContent:"center",
-            margin:"0 auto 18px",border:"2px solid #fcd34d",
+            margin:"0 auto 16px",border:"2px solid #fcd34d",
             boxShadow:"0 8px 24px rgba(245,158,11,.18)"}}>
-            <svg width="32"height="32"viewBox="0 0 24 24"fill="none"stroke="#f59e0b"strokeWidth="2.2"strokeLinecap="round">
+            <svg width="28"height="28"viewBox="0 0 24 24"fill="none"stroke="#f59e0b"strokeWidth="2.2"strokeLinecap="round">
               <circle cx="12"cy="12"r="10"/><line x1="12"y1="8"x2="12"y2="12"/><line x1="12"y1="16"x2="12.01"y2="16"/>
             </svg>
           </div>
 
-          <h3 style={{fontSize:18,fontWeight:800,color:"#92400e",marginBottom:6}}>Large Transaction Detected</h3>
-          <p style={{color:"#64748b",fontSize:14,marginBottom:10}}>
-            You are sending <strong style={{color:"#0f172a"}}>₹{Number(amount).toLocaleString("en-IN")}</strong>
+          <h3 style={{fontSize:17,fontWeight:800,color:"#92400e",marginBottom:6}}>Large Transaction</h3>
+          <p style={{color:"#64748b",fontSize:14,marginBottom:16}}>
+            You're sending <strong style={{color:"#0f172a"}}>₹{Number(amount).toLocaleString("en-IN")}</strong>
           </p>
 
-          {/* Psychological safety warning */}
-          <div style={{padding:"12px 16px",background:"#fef3c7",border:"1px solid #fcd34d",
-            borderRadius:12,marginBottom:20,textAlign:"left"}}>
-            <p style={{fontSize:12,color:"#92400e",fontWeight:600,lineHeight:1.5}}>
-              ⚠️ <strong>Scammers often create urgency.</strong> Take a moment to verify:
-              <br/>• Do you personally know this recipient?
-              <br/>• Did anyone ask you to make this payment urgently?
-              <br/>• Is the amount what you intended?
-            </p>
-          </div>
-
-          {/* SVG countdown ring */}
-          <div style={{position:"relative",width:88,height:88,margin:"0 auto 18px"}}>
-            <svg width="88"height="88"viewBox="0 0 88 88"style={{transform:"rotate(-90deg)"}}>
+          {/* Countdown ring */}
+          <div style={{position:"relative",width:80,height:80,margin:"0 auto 16px"}}>
+            <svg width="80"height="80"viewBox="0 0 88 88"style={{transform:"rotate(-90deg)"}}>
               <circle cx="44"cy="44"r="34"fill="none"stroke="#f1f5f9"strokeWidth="8"/>
               <circle cx="44"cy="44"r="34"fill="none"stroke={done?"#22c55e":"#f59e0b"}strokeWidth="8"
                 strokeLinecap="round"
@@ -3773,40 +3606,37 @@ function SmartDelayModal({amount, onConfirm, onCancel}){
                 style={{transition:"stroke-dashoffset 1s linear,stroke .3s"}}/>
             </svg>
             <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",
-              justifyContent:"center",fontSize:26,fontWeight:800,
+              justifyContent:"center",fontSize:24,fontWeight:800,
               color:done?"#166534":"#f59e0b",fontFamily:"monospace"}}>
               {done?"✓":secs}
             </div>
           </div>
 
-          {/* Countdown bar */}
-          <div style={{height:4,background:"#f1f5f9",borderRadius:2,overflow:"hidden",marginBottom:20}}>
-            <div style={{height:"100%",width:`${pct}%`,
-              background:`linear-gradient(90deg,#f59e0b,${done?"#22c55e":"#f97316"})`,
-              borderRadius:2,transition:"width 1s linear,background .3s"}}/>
+          {/* Safety check list */}
+          <div style={{padding:"12px 16px",background:"#fef3c7",border:"1px solid #fcd34d",
+            borderRadius:10,marginBottom:20,textAlign:"left"}}>
+            <p style={{fontSize:12,color:"#92400e",fontWeight:600,lineHeight:1.5}}>
+              Please verify before continuing:
+            </p>
           </div>
 
-          <p style={{fontSize:12,color:"#94a3b8",marginBottom:16}}>
-            {done?"You may now confirm your payment":"Please review the details above"}
-          </p>
-
-          <div style={{display:"flex",gap:10}}>
+          {/* Buttons */}
+          {done ? (
+            <button onClick={onConfirm} className="btn-primary"
+              style={{width:"100%",padding:"14px",borderRadius:12,border:"none",
+                background:"linear-gradient(135deg,#22c55e,#16a34a)",color:"#fff",
+                fontWeight:700,fontSize:15,cursor:"pointer",fontFamily:"'DM Sans',sans-serif",
+                boxShadow:"0 6px 18px rgba(34,197,94,.3)"}}>
+              Confirm Payment
+            </button>
+          ) : (
             <button onClick={onCancel}
-              style={{flex:1,padding:"11px",background:"#f8faff",border:"1px solid #e2e8f0",
-                borderRadius:12,fontWeight:600,fontSize:14,cursor:"pointer",color:"#64748b",
+              style={{width:"100%",padding:"14px",borderRadius:12,border:"1.5px solid #e2e8f0",
+                background:"#fff",color:"#64748b",fontWeight:600,fontSize:14,cursor:"pointer",
                 fontFamily:"'DM Sans',sans-serif"}}>
               Cancel
             </button>
-            <button onClick={()=>{if(done)onConfirm();}} disabled={!done}
-              className="btn-primary"
-              style={{flex:2,padding:"11px",border:"none",borderRadius:12,fontWeight:700,fontSize:14,
-                cursor:done?"pointer":"not-allowed",fontFamily:"'DM Sans',sans-serif",
-                background:done?"linear-gradient(135deg,#22c55e,#16a34a)":"#93c5fd",
-                color:"#fff",boxShadow:done?"0 4px 14px rgba(34,197,94,.3)":"none",
-                transition:"all .3s"}}>
-              {done?"✓ Confirm Payment →":"Reviewing…"}
-            </button>
-          </div>
+          )}
         </div>
       </div>
     </Modal>
@@ -4851,31 +4681,46 @@ function SendMoneyPage({user,balance,addTx,updateBalance,setPage,updateUser}){
   }
 
   if(stage==="success") return(
-    <div className="page-pad page-enter" style={{padding:40,display:"flex",flexDirection:"column",
-      alignItems:"center",minHeight:"60vh",justifyContent:"center"}}>
-      <div style={{background:"#fff",borderRadius:24,padding:"40px 34px",maxWidth:380,width:"100%",
-        boxShadow:"0 20px 56px rgba(0,120,255,.1)",textAlign:"center",animation:"scaleIn .4s cubic-bezier(.16,1,.3,1)"}}>
+    <div className="page-pad page-enter" style={{display:"flex",flexDirection:"column",
+      alignItems:"center",minHeight:"70vh",justifyContent:"center",padding:24}}>
+      <div style={{background:"#fff",borderRadius:24,padding:"40px 32px",maxWidth:380,width:"100%",
+        boxShadow:"0 20px 56px rgba(0,120,255,.1)",textAlign:"center",animation:"scaleIn .3s ease"}}>
+        {/* Success animation */}
         <div style={{width:80,height:80,borderRadius:"50%",
           background:"linear-gradient(135deg,#dcfce7,#bbf7d0)",
-          display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 20px",
+          display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 24px",
           boxShadow:"0 8px 24px rgba(34,197,94,.2)"}}>
           <svg width="40"height="40"viewBox="0 0 40 40">
             <polyline points="8 20 16 28 32 12"fill="none"stroke="#166534"strokeWidth="3.5"strokeLinecap="round"strokeLinejoin="round"
               strokeDasharray="36"strokeDashoffset="36"style={{animation:"drawCheck .4s .1s ease forwards"}}/>
           </svg>
         </div>
-        <h2 style={{color:"#166534",fontSize:22,fontWeight:800,marginBottom:8}}>Payment Successful!</h2>
-        <p style={{color:"#64748b",marginBottom:4,fontSize:15}}>
-          <b style={{color:"#0f172a"}}>₹{parsedAmt.toLocaleString("en-IN")}</b> sent to
-        </p>
-        <p style={{color:"#0078FF",fontWeight:700,marginBottom:4,fontSize:14}}>{getRecipientInfo().name || recipient}</p>
-        <p style={{color:"#94a3b8",fontSize:12,marginBottom:28}}>Ref: PT{lastTx&&lastTx.id}</p>
-        <div style={{display:"flex",gap:10}}>
-          <Btn onClick={()=>{setStage("form");setRecipient("");setAmt("");setNote("");setRiskData({score:0,signals:[],action:'allow'});setBalErr("");}} variant="primary" style={{flex:1}}>
-            New Payment
-          </Btn>
-          <Btn onClick={()=>setPage("history")} variant="secondary" style={{flex:1}}>History</Btn>
+        <h2 style={{color:"#166534",fontSize:24,fontWeight:800,marginBottom:12}}>Payment Sent!</h2>
+        <div style={{marginBottom:20}}>
+          <div style={{fontSize:36,fontWeight:800,color:"#0f172a",marginBottom:4}}>
+            ₹{parsedAmt.toLocaleString("en-IN")}
+          </div>
+          <div style={{fontSize:14,color:"#64748b"}}>sent to</div>
+          <div style={{fontSize:16,fontWeight:700,color:"#0078FF",marginTop:4}}>
+            {getRecipientInfo().name || recipient}
+          </div>
         </div>
+        <p style={{color:"#94a3b8",fontSize:12,marginBottom:24}}>Ref: PT{lastTx&&lastTx.id}</p>
+        {/* Action buttons */}
+        <button onClick={()=>{setStage("form");setRecipient("");setAmt("");setNote("");setRiskData({score:0,signals:[],action:'allow'});setBalErr("");}}
+          className="btn-primary"
+          style={{width:"100%",padding:"14px",borderRadius:12,border:"none",
+            background:"linear-gradient(135deg,#0078FF,#0055cc)",color:"#fff",
+            fontWeight:700,fontSize:15,cursor:"pointer",fontFamily:"'DM Sans',sans-serif",
+            boxShadow:"0 6px 18px rgba(0,120,255,.3)",marginBottom:10}}>
+          Send More Money
+        </button>
+        <button onClick={()=>setPage("history")}
+          style={{width:"100%",padding:"14px",borderRadius:12,border:"1.5px solid #e2e8f0",
+            background:"#fff",color:"#64748b",fontWeight:600,fontSize:14,cursor:"pointer",
+            fontFamily:"'DM Sans',sans-serif"}}>
+          View History
+        </button>
       </div>
     </div>
   );
@@ -4891,39 +4736,34 @@ function SendMoneyPage({user,balance,addTx,updateBalance,setPage,updateUser}){
         />
       )}
 
-      {/* ===== FEATURE: Duplicate Payment Warning Modal ===== */}
+      {/* ═══ SIMPLIFIED DUPLICATE PAYMENT WARNING ═══ */}
       {showDupWarning && (
         <Modal>
-          <div style={{background:"#fff",borderRadius:24,padding:"32px 28px",maxWidth:380,width:"100%",
-            boxShadow:"0 20px 56px rgba(0,0,0,.18)",textAlign:"center",animation:"scaleIn .3s cubic-bezier(.16,1,.3,1)"}}>
-            <div style={{width:72,height:72,borderRadius:"50%",background:"#fef3c7",
-              display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 18px",
-              boxShadow:"0 8px 24px rgba(245,158,11,.2)"}}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round">
+          <div style={{background:"#fff",borderRadius:20,padding:"28px 24px",maxWidth:360,width:"100%",
+            boxShadow:"0 20px 56px rgba(0,0,0,.18)",textAlign:"center",animation:"scaleIn .25s ease"}}>
+            <div style={{width:56,height:56,borderRadius:"50%",background:"#fef3c7",
+              display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px"}}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2.5">
                 <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
                 <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
               </svg>
             </div>
-            <h3 style={{color:"#92400e",fontSize:18,fontWeight:800,marginBottom:10}}>Duplicate Payment Alert</h3>
-            <p style={{color:"#78350f",fontSize:14,lineHeight:1.6,marginBottom:24}}>
-              You recently sent <strong>₹{parsedAmt.toLocaleString("en-IN")}</strong> to{" "}
-              <strong>{getRecipientInfo().name || recipient}</strong>.{" "}
-              Please confirm this is intentional.
+            <h3 style={{color:"#92400e",fontSize:17,fontWeight:800,marginBottom:8}}>Duplicate Payment</h3>
+            <p style={{color:"#78350f",fontSize:14,lineHeight:1.5,marginBottom:20}}>
+              You sent ₹{parsedAmt.toLocaleString("en-IN")} to this person recently. Confirm this is intentional.
             </p>
             <div style={{display:"flex",gap:10}}>
               <button onClick={handleDupWarningCancel}
-                style={{flex:1,padding:"12px",borderRadius:12,border:"1.5px solid #e2e8f0",
-                  background:"#fff",color:"#374151",fontWeight:700,fontSize:14,cursor:"pointer",
+                style={{flex:1,padding:"12px",borderRadius:10,border:"1.5px solid #e2e8f0",
+                  background:"#fff",color:"#64748b",fontWeight:700,fontSize:14,cursor:"pointer",
                   fontFamily:"'DM Sans',sans-serif"}}>
                 Cancel
               </button>
               <button onClick={handleDupWarningProceed}
-                style={{flex:1,padding:"12px",borderRadius:12,border:"none",
-                  background:"linear-gradient(135deg,#d97706,#b45309)",
-                  color:"#fff",fontWeight:700,fontSize:14,cursor:"pointer",
-                  fontFamily:"'DM Sans',sans-serif",
-                  boxShadow:"0 4px 14px rgba(217,119,6,.3)"}}>
-                Proceed Anyway
+                style={{flex:1,padding:"12px",borderRadius:10,border:"none",
+                  background:"#d97706",color:"#fff",fontWeight:700,fontSize:14,cursor:"pointer",
+                  fontFamily:"'DM Sans',sans-serif",boxShadow:"0 4px 12px rgba(217,119,6,.3)"}}>
+                Send Again
               </button>
             </div>
           </div>
@@ -4963,74 +4803,75 @@ function SendMoneyPage({user,balance,addTx,updateBalance,setPage,updateUser}){
         />
       )}
 
-      <div style={{marginBottom:22}}>
-        <h2 style={{fontSize:22,fontWeight:800,color:"#0f172a",marginBottom:4}}>Send Money</h2>
-        <p style={{fontSize:14,color:"#64748b"}}>Every transfer is AI-analyzed for fraud in real-time</p>
+      {/* ═══ STEP-BASED PAYMENT FLOW ═══ */}
+      {/* Step indicator */}
+      <div style={{marginBottom:24}}>
+        <div style={{display:"flex", alignItems:"center", gap:8, marginBottom:16}}>
+          {[
+            {n:1,label:"Enter Details"},
+            {n:2,label:"Review & Pay"},
+            {n:3,label:"Confirmation"}
+          ].map(({n,label}) => {
+            const stepNum = stage === "form" ? 1 : stage === "risk" || stage === "pin" || stage === "otp" ? 2 : stage === "success" ? 3 : 1;
+            const isActive = stepNum === n;
+            const isDone = stepNum > n;
+            return (
+              <div key={n} style={{flex:1, display:"flex", alignItems:"center", gap:6}}>
+                <div style={{
+                  width:28, height:28, borderRadius:"50%", background: isDone ? "#22c55e" : isActive ? "#0078FF" : "#e2e8f0",
+                  display:"flex", alignItems:"center", justifyContent:"center",
+                  fontSize:12, fontWeight:800, color: isDone || isActive ? "#fff" : "#94a3b8",
+                  transition:"all .2s"
+                }}>
+                  {isDone ? "✓" : n}
+                </div>
+                <span style={{fontSize:12, fontWeight:700, color: isActive ? "#0f172a" : "#94a3b8"}}>{label}</span>
+                {n < 3 && <div style={{flex:1, height:2, background: isDone ? "#22c55e" : "#e2e8f0", marginLeft:8}}/>}
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      {(stage==="form"||stage==="analyzing")&&(
+      {stage==="form"&&(
         <Card style={{padding:24}}>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",
-            padding:"14px 16px",background:`linear-gradient(135deg,#0078FF,#0055cc)`,
-            borderRadius:14,marginBottom:22,boxShadow:"0 6px 18px rgba(0,120,255,.22)"}}>
+          {/* Balance display — simplified */}
+          <div style={{
+            display:"flex", alignItems:"center", justifyContent:"space-between",
+            padding:"14px 16px", background:`linear-gradient(135deg,#0078FF,#0055cc)`,
+            borderRadius:14, marginBottom:24, boxShadow:"0 6px 18px rgba(0,120,255,.22)"
+          }}>
             <div>
               <div style={{fontSize:11,color:"rgba(255,255,255,.7)",fontWeight:700,
                 textTransform:"uppercase",letterSpacing:.6,marginBottom:4}}>Available Balance</div>
-              <div style={{fontSize:22,fontWeight:800,color:"#fff"}}>₹{balance.toLocaleString("en-IN")}</div>
+              <div style={{fontSize:24,fontWeight:800,color:"#fff"}}>₹{balance.toLocaleString("en-IN")}</div>
             </div>
-            {balance===0&&(
-              <div style={{background:"rgba(255,100,100,.25)",padding:"5px 12px",borderRadius:8,
-                fontSize:12,fontWeight:700,color:"#fff",border:"1px solid rgba(255,255,255,.2)"}}>
-                Zero Balance
-              </div>
-            )}
           </div>
 
+          {/* Recipient input — prominent */}
           <div style={{marginBottom:18}}>
             <div style={{display:"flex",gap:10,marginBottom:10}}>
-              <button
-                onClick={() => { setRecipientType("phone"); setRecipient(""); setRecipientErr(""); }}
-                style={{
-                  flex:1,
-                  padding:"8px",
-                  borderRadius:8,
-                  border:recipientType==="phone" ? "2px solid #0078FF" : "1px solid #e2e8f0",
-                  background:recipientType==="phone" ? "#e8f1ff" : "#fff",
-                  color:recipientType==="phone" ? "#0078FF" : "#64748b",
-                  fontWeight:600,
-                  cursor:"pointer",
-                  fontFamily:"'DM Sans', sans-serif"
-                }}
-              >
-                {Ic.phone(recipientType==="phone"?"#0078FF":"#64748b")} Phone
+              <button onClick={() => { setRecipientType("phone"); setRecipient(""); setRecipientErr(""); }}
+                style={{flex:1, padding:"10px", borderRadius:10, border:recipientType==="phone" ? "2px solid #0078FF" : "1px solid #e2e8f0",
+                  background:recipientType==="phone" ? "#e8f1ff" : "#fff", color:recipientType==="phone" ? "#0078FF" : "#64748b",
+                  fontWeight:600, cursor:"pointer", fontFamily:"'DM Sans', sans-serif", fontSize:14}}>
+                Phone
               </button>
-              <button
-                onClick={() => { setRecipientType("upi"); setRecipient(""); setRecipientErr(""); }}
-                style={{
-                  flex:1,
-                  padding:"8px",
-                  borderRadius:8,
-                  border:recipientType==="upi" ? "2px solid #0078FF" : "1px solid #e2e8f0",
-                  background:recipientType==="upi" ? "#e8f1ff" : "#fff",
-                  color:recipientType==="upi" ? "#0078FF" : "#64748b",
-                  fontWeight:600,
-                  cursor:"pointer",
-                  fontFamily:"'DM Sans', sans-serif"
-                }}
-              >
-                {Ic.send(recipientType==="upi"?"#0078FF":"#64748b")} UPI
+              <button onClick={() => { setRecipientType("upi"); setRecipient(""); setRecipientErr(""); }}
+                style={{flex:1, padding:"10px", borderRadius:10, border:recipientType==="upi" ? "2px solid #0078FF" : "1px solid #e2e8f0",
+                  background:recipientType==="upi" ? "#e8f1ff" : "#fff", color:recipientType==="upi" ? "#0078FF" : "#64748b",
+                  fontWeight:600, cursor:"pointer", fontFamily:"'DM Sans', sans-serif", fontSize:14}}>
+                UPI ID
               </button>
             </div>
-            
-            <label style={{fontSize:12,fontWeight:700,color:"#374151",display:"block",marginBottom:7}}>
-              Recipient {recipientType === 'phone' ? 'Mobile Number' : 'UPI ID'}
-              <span style={{fontSize:11,fontWeight:500,color:"#94a3b8",marginLeft:8}}>(You are SENDING money to this person)</span>
+
+            <label style={{fontSize:13,fontWeight:700,color:"#374151",display:"block",marginBottom:8}}>
+              Send to
             </label>
             <input
               value={recipient}
               onChange={e => {
                 recordInteraction(user.number,'recipient_input');
-                // FEATURE: digit-only for phone type, max 10 digits
                 const val = recipientType === 'phone'
                   ? e.target.value.replace(/\D/,"").slice(0,10)
                   : e.target.value;
@@ -5038,157 +4879,126 @@ function SendMoneyPage({user,balance,addTx,updateBalance,setPage,updateUser}){
                 setRecipientErr("");
               }}
               placeholder={recipientType === 'phone' ? "10-digit mobile number" : "example@paytrust"}
-              style={{width:"100%",padding:"12px 14px",borderRadius:12,
-                border:`1.5px solid ${recipientErr?"#fca5a5":recipient?"#93c5fd":"#e2e8f0"}`,
-                fontSize:14,outline:"none",boxSizing:"border-box",
+              style={{width:"100%",padding:"14px 12px",borderRadius:12,
+                border:`2px solid ${recipientErr?"#fca5a5":recipient?"#93c5fd":"#e2e8f0"}`,
+                fontSize:16,outline:"none",boxSizing:"border-box",
                 color:"#0f172a",background:"#fff",fontFamily:"'DM Sans',sans-serif"}}
             />
-            {/* FEATURE: Recipient mobile validation error */}
             {recipientErr && (
-              <div style={{marginTop:6,fontSize:12,color:"#dc2626",fontWeight:600,animation:"slideDown .2s ease"}}>
-                {recipientErr}
-              </div>
+              <div style={{marginTop:6,fontSize:12,color:"#dc2626",fontWeight:600}}>{recipientErr}</div>
             )}
+            {/* Recipient preview */}
             {recipient && recipientType === 'phone' && recipient in USERS && (
-              <div style={{marginTop:6,fontSize:13,color:"#166534",display:"flex",alignItems:"center",gap:7,flexWrap:"wrap"}}>
-                {Ic.check("#166534")} <strong>{USERS[recipient].name}</strong>
+              <div style={{marginTop:8, padding:"10px 14px", background:"#f0fdf4", borderRadius:10, border:"1px solid #bbf7d0",
+                display:"flex", alignItems:"center", gap:10}}>
+                <div style={{width:36, height:36, borderRadius:"50%", background:"#22c55e",
+                  display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, fontWeight:800, color:"#fff"}}>
+                  {USERS[recipient].name.charAt(0)}
+                </div>
+                <div>
+                  <div style={{fontWeight:700, fontSize:14, color:"#166534"}}>{USERS[recipient].name}</div>
+                  <div style={{fontSize:12, color:"#64748b"}}>+91 {recipient}</div>
+                </div>
                 {USERS[recipient].verified && (
-                  <span style={{fontSize:11,background:"#e0f2fe",color:"#0369a1",padding:"2px 8px",
-                    borderRadius:12,fontWeight:700,display:"flex",alignItems:"center",gap:3}}>
-                    ✔ Verified
-                  </span>
-                )}
-                {/* Network report count badge */}
-                {getRecipientRisk(recipient) > 0 && (
-                  <span style={{fontSize:11,background:"#fef2f2",color:"#dc2626",
-                    padding:"2px 9px",borderRadius:12,fontWeight:700,border:"1px solid #fca5a5"}}>
-                    ⚠ Reported {getRecipientRisk(recipient)}×
-                  </span>
-                )}
-                {getRecipientRisk(recipient) > 3 && (
-                  <span style={{fontSize:11,background:"#450a0a",color:"#fca5a5",
-                    padding:"2px 9px",borderRadius:12,fontWeight:700}}>
-                    🚨 High-risk
-                  </span>
+                  <span style={{marginLeft:"auto", fontSize:11, background:"#dcfce7", color:"#166534", padding:"2px 10px", borderRadius:12, fontWeight:700}}>Verified</span>
                 )}
               </div>
             )}
-            {/* ===== Recipient Risk Warning (network-level reporting) ===== */}
-            <RecipientRiskWarning recipient={recipient} recipientType={recipientType} userContacts={user.contacts} amount={parsedAmt} userObj={user}/>
           </div>
 
+          {/* Amount input — large and prominent */}
           <div style={{marginBottom:18}}>
-            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:7}}>
-              <label style={{fontSize:12,fontWeight:700,color:"#374151"}}>Amount (₹)</label>
-              {isInsufficient&&(
-                <span style={{fontSize:11,fontWeight:700,color:"#dc2626",display:"flex",alignItems:"center",gap:4}}>
-                  {Ic.warn("#dc2626")} Exceeds balance
-                </span>
-              )}
+            <label style={{fontSize:13,fontWeight:700,color:"#374151",display:"block",marginBottom:8}}>Amount</label>
+            <div style={{position:"relative"}}>
+              <span style={{position:"absolute",left:14,top:"50%",transform:"translateY(-50%)",
+                fontSize:24,fontWeight:800,color:"#94a3b8"}}>₹</span>
+              <input type="number" value={amt} onChange={e=>handleAmtChange(e.target.value)}
+                placeholder="0"
+                style={{width:"100%",padding:"14px 14px 14px 32px",borderRadius:12,
+                  border:`2px solid ${isInsufficient?"#fca5a5":amt?"#93c5fd":"#e2e8f0"}`,
+                  fontSize:28,fontWeight:800,outline:"none",boxSizing:"border-box",
+                  color:isInsufficient?"#dc2626":"#0f172a",background:isInsufficient?"#fef2f2":"#fff"}}/>
             </div>
-            <input type="number" value={amt} onChange={e=>handleAmtChange(e.target.value)}
-              placeholder="0"
-              style={{width:"100%",padding:"12px 14px",borderRadius:12,
-                border:`1.5px solid ${isInsufficient?"#fca5a5":amt?"#93c5fd":"#e2e8f0"}`,
-                fontSize:24,fontWeight:800,outline:"none",boxSizing:"border-box",
-                color:isInsufficient?"#dc2626":"#0f172a",background:isInsufficient?"#fef2f2":"#fff"}}/>
             {isInsufficient&&(
-              <div style={{display:"flex",alignItems:"center",gap:7,marginTop:8,padding:"9px 12px",
-                background:"#fef2f2",borderRadius:10,border:"1px solid #fca5a5"}}>
-                {Ic.warn("#dc2626")}
+              <div style={{marginTop:8, padding:"10px 12px", background:"#fef2f2", borderRadius:10, border:"1px solid #fca5a5",
+                display:"flex", alignItems:"center", gap:8}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2.5">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
                 <span style={{fontSize:13,color:"#dc2626",fontWeight:600}}>
-                  You only have ₹{balance.toLocaleString("en-IN")} available.
+                  Only ₹{balance.toLocaleString("en-IN")} available
                 </span>
               </div>
             )}
-            <div style={{marginTop:10,display:"flex",gap:7,flexWrap:"wrap"}}>
-              {[500,1000,5000,10000].map(v=>(
+            {/* Quick amount buttons */}
+            <div style={{marginTop:10,display:"flex",gap:8}}>
+              {[500,1000,2000,5000].map(v=>(
                 <button key={v} onClick={()=>handleAmtChange(String(v))}
-                  style={{padding:"5px 12px",background:amt==v?"#e8f1ff":"#f8faff",
-                    border:`1.5px solid ${amt==v?"#93c5fd":"#e2e8f0"}`,borderRadius:20,
-                    color:amt==v?"#0078FF":"#64748b",cursor:"pointer",fontSize:13,fontWeight:600}}>
+                  style={{flex:1,padding:"8px",background:amt==v?"#e8f1ff":"#f8faff",
+                    border:`1.5px solid ${amt==v?"#93c5fd":"#e2e8f0"}`,borderRadius:10,
+                    color:amt==v?"#0078FF":"#64748b",cursor:"pointer",fontSize:13,fontWeight:700}}>
                   ₹{v.toLocaleString("en-IN")}
                 </button>
               ))}
             </div>
           </div>
 
-          <div style={{marginBottom:22}}>
-            <label style={{fontSize:12,fontWeight:700,color:"#374151",display:"block",marginBottom:7}}>Note (optional)</label>
-            <input value={note} onChange={e=>setNote(e.target.value)} placeholder="What's this for?"
+          {/* Note — simplified */}
+          <div style={{marginBottom:24}}>
+            <label style={{fontSize:13,fontWeight:700,color:"#374151",display:"block",marginBottom:8}}>What's it for? (optional)</label>
+            <input value={note} onChange={e=>setNote(e.target.value)} placeholder="e.g. Lunch, Rent"
               style={{width:"100%",padding:"12px 14px",borderRadius:12,border:"1.5px solid #e2e8f0",
                 fontSize:14,outline:"none",boxSizing:"border-box",color:"#0f172a"}}/>
           </div>
 
-          {stage==="analyzing"&&(
-            <div style={{marginBottom:20,padding:"16px",background:"#e8f1ff",borderRadius:14,
-              border:"1px solid #93c5fd"}}>
-              <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:10}}>
-                <span style={{display:"flex",alignItems:"center",gap:7,color:"#0078FF",fontWeight:800}}>
-                  {Ic.shield("#0078FF")} Analyzing transaction…
-                </span>
-                <span style={{fontWeight:800,color:"#0078FF"}}>{Math.round(prog)}%</span>
-              </div>
-              <div style={{height:6,background:"#dbeafe",borderRadius:3,overflow:"hidden"}}>
-                <div style={{height:"100%",width:`${prog}%`,
-                  background:`linear-gradient(90deg,#0078FF,#0055cc)`,
-                  borderRadius:3,transition:"width .1s"}}/>
-              </div>
-              <div style={{display:"flex",gap:7,marginTop:12,flexWrap:"wrap"}}>
-                {["Rule Engine","Behaviour","ML Scorer","Keyword Scan","Decision"].map((s,i)=>(
-                  <span key={s} style={{padding:"4px 10px",
-                    background:prog>(i+1)*20?"#dbeafe":"#f8faff",
-                    border:`1px solid ${prog>(i+1)*20?"#93c5fd":"#e2e8f0"}`,borderRadius:16,
-                    fontSize:11,color:prog>(i+1)*20?"#0078FF":"#94a3b8",fontWeight:600,
-                    display:"flex",alignItems:"center",gap:5}}>
-                    {prog>(i+1)*20?Ic.check("#0078FF"):<svg width="11"height="11"viewBox="0 0 12 12"><circle cx="6"cy="6"r="5"fill="none"stroke="#e2e8f0"strokeWidth="1.5"/></svg>}
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <button onClick={analyzeRisk} disabled={!isFormReady||stage==="analyzing"}
+          {/* Continue button — dominant CTA */}
+          <button onClick={analyzeRisk} disabled={!isFormReady}
             className="btn-primary"
-            style={{width:"100%",padding:"14px",fontSize:16,borderRadius:14,border:"none",
-              background:(!isFormReady||stage==="analyzing")?"#93c5fd":`linear-gradient(135deg,#0078FF,#0055cc)`,
-              color:"#fff",fontWeight:700,
-              cursor:(!isFormReady||stage==="analyzing")?"not-allowed":"pointer",
-              boxShadow:(!isFormReady||stage==="analyzing")?"none":"0 6px 18px rgba(0,120,255,.28)"}}>
-            {stage==="analyzing"?"Analyzing…":"Analyze & Send →"}
+            style={{width:"100%",padding:"16px",fontSize:16,borderRadius:14,border:"none",
+              background:!isFormReady?"#93c5fd":`linear-gradient(135deg,#0078FF,#0055cc)`,
+              color:"#fff",fontWeight:700, cursor:!isFormReady?"not-allowed":"pointer",
+              boxShadow:!isFormReady?"none":"0 6px 20px rgba(0,120,255,.3)", fontFamily:"'DM Sans',sans-serif"}}>
+            Continue
           </button>
         </Card>
       )}
 
-      {stage==="risk" && (
-        <>
-          {/* ===== FEATURE 2: Behavioral Biometrics alert ===== */}
-          {getBiometricRisk(user.number).risk >= 5 && (
-            <div style={{padding:"12px 16px",background:"#fff7ed",border:"1px solid #fdba74",
-              borderRadius:12,marginBottom:14,display:"flex",alignItems:"center",gap:10,
-              animation:"slideDown .3s ease"}}>
-              {Ic.warn("#f97316")}
-              <span style={{fontSize:13,color:"#92400e",fontWeight:600}}>
-                Unusual behavior detected — additional verification applied
-              </span>
+      {/* Analyzing animation — simplified */}
+      {stage==="analyzing"&&(
+        <Card style={{padding:32, textAlign:"center"}}>
+          <div style={{marginBottom:20}}>
+            <div style={{width:60,height:60,borderRadius:"50%",background:"#e8f1ff",
+              display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px"}}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0078FF" strokeWidth="2.5"
+                style={{animation:"pulse 1s infinite"}}>
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
             </div>
-          )}
-          <FraudRiskCard
-            score={riskData.score}
-            recipient={getRecipientInfo().name || recipient}
-            recipientNum={getRecipientInfo().targetNum || recipient}
-            amount={parsedAmt}
-            signals={riskData.signals}
-            onVerify={handleVerify}
-            onCancel={() => setStage("form")}
-            onReport={handleReport}
-            tier={riskData.tier}
-            kwMatched={riskData.kwMatched || []}
-            urgencyHits={riskData.urgencyHits || []}
-            urgencyScore={riskData.urgencyScore || 0}
-          />
-        </>
+            <h3 style={{fontSize:18, fontWeight:800, color:"#0f172a", marginBottom:4}}>Checking transaction…</h3>
+            <p style={{fontSize:13, color:"#64748b"}}>Verifying recipient and amount</p>
+          </div>
+          <div style={{height:6,background:"#e2e8f0",borderRadius:3,overflow:"hidden"}}>
+            <div style={{height:"100%",width:`${prog}%`,background:"linear-gradient(90deg,#0078FF,#0055cc)",
+              borderRadius:3,transition:"width .1s"}}/>
+          </div>
+        </Card>
+      )}
+
+      {stage==="risk" && (
+        <FraudRiskCard
+          score={riskData.score}
+          recipient={getRecipientInfo().name || recipient}
+          recipientNum={getRecipientInfo().targetNum || recipient}
+          amount={parsedAmt}
+          signals={riskData.signals}
+          onVerify={handleVerify}
+          onCancel={() => { setStage("form"); setRecipient(""); setAmt(""); setNote(""); }}
+          onReport={handleReport}
+          tier={riskData.tier}
+          kwMatched={riskData.kwMatched || []}
+          urgencyHits={riskData.urgencyHits || []}
+          urgencyScore={riskData.urgencyScore || 0}
+        />
       )}
     </div>
   );
@@ -6361,24 +6171,6 @@ function LocationCard({ user }){
   const[loc,setLoc]=useState(GeoDeviceBaseline.location?.display || null);
   const[editing,setEditing]=useState(false);
   const[manual,setManual]=useState("");
-
-  // Sync local state when location becomes available after login capture
-  useEffect(() => {
-    if (GeoDeviceBaseline.location?.display) {
-      setLoc(GeoDeviceBaseline.location.display);
-    }
-  }, []);
-
-  // Re-render when location is captured after login
-  useEffect(() => {
-    const handler = () => {
-      if (GeoDeviceBaseline.location?.display) {
-        setLoc(GeoDeviceBaseline.location.display);
-      }
-    };
-    window.addEventListener("locationUpdated", handler);
-    return () => window.removeEventListener("locationUpdated", handler);
-  }, []);
 
   function refreshLocation(){
     setLoading(true);
@@ -8709,7 +8501,7 @@ function App(){
     // Derive WS server URL from current hostname so cross-device works.
     // WebSocket server runs as a separate Railway service.
     // Replace the URL below with your Railway WS service domain after deploying.
-    const wsUrl = window.__WS_URL__ || "perceptive-fascination-production-dc67.up.railway.app";
+    const wsUrl = window.__WS_URL__ || "https://determined-vibrancy.up.railway.app";
     console.log("[PayTrust WS] Connecting to:", wsUrl);
 
     const socket = io(wsUrl, {
@@ -8813,8 +8605,6 @@ function App(){
     setTxs(SEED_TXS);
     setRequests(SEED_REQS);
     userRef.current = u;
-    // Capture location once on login — reuses stored location if already captured
-    initLocationOnce();
     // Register with WS server as soon as the user is known
     if (socketRef.current?.connected) {
       socketRef.current.emit("user_register", u.number, (ack) => {
@@ -9013,45 +8803,89 @@ function SmartGuardPage({setPage, user}) {
 
   function handleGameComplete() {
     setShowModal(false);
-    // Refresh coins and canPlay from localStorage after game ends
     setCoins(parseInt(localStorage.getItem('coins') || '0'));
     if (!isAdmin) {
       setCanPlay(localStorage.getItem('lastPlayedDate') !== new Date().toDateString());
     }
   }
 
+  const blocks = [
+    {
+      key: 'quiz',
+      icon: '🧠',
+      title: 'Fraud Quiz',
+      desc: 'Answer 5 questions about common fraud scenarios.',
+      action: canPlay ? 'Start Quiz' : null,
+      onAction: handlePlayNow,
+      disabled: !canPlay,
+      badge: canPlay ? null : 'Come back tomorrow',
+    },
+    {
+      key: 'tip',
+      icon: '💡',
+      title: 'Daily Tip',
+      desc: 'Never share your OTP or PIN with anyone, including bank officials.',
+      action: null,
+    },
+    {
+      key: 'game',
+      icon: '🎮',
+      title: 'Mini Game',
+      desc: 'Spot the scam: tap the suspicious message in a set of 4.',
+      action: canPlay ? 'Play Now' : null,
+      onAction: handlePlayNow,
+      disabled: !canPlay,
+      badge: canPlay ? null : 'Already played today',
+    },
+  ];
+
   return (
-    <div className="page-pad page-enter" style={{ padding: 24, maxWidth: 500, margin: '0 auto', textAlign: 'center' }}>
+    <div className="page-pad page-enter" style={{ padding: '20px 16px 32px', maxWidth: 480, margin: '0 auto' }}>
       {showModal && canPlay && <SmartGuardGame onComplete={handleGameComplete} />}
-      <div style={{ width: 80, height: 80, borderRadius: 24, background: 'linear-gradient(135deg,#8b5cf6,#6d28d9)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 12px 32px rgba(139,92,246,.35)' }}>
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <h2 style={{ fontSize: 26, fontWeight: 800, color: '#0f172a', marginBottom: 8 }}>Learn & Play</h2>
-      <p style={{ fontSize: 14, color: '#64748b', marginBottom: 24, lineHeight: 1.6 }}>Test your fraud detection skills and earn coins!</p>
-      <div style={{ background: '#f0f6ff', borderRadius: 16, padding: 20, marginBottom: 24 }}>
-        <div style={{ fontSize: 14, color: '#64748b', marginBottom: 6 }}>Your Coins</div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: '#0078FF' }}>🪙 {coins}</div>
-      </div>
-      {canPlay ? (
-        <div style={{ background: '#dcfce7', border: '1.5px solid #86efac', borderRadius: 16, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, color: '#166534', marginBottom: 4 }}>{isAdmin ? 'Admin Access — Unlimited Play!' : 'Ready to play!'}</div>
-          <div style={{ fontSize: 13, color: '#15803d', marginBottom: 16 }}>Answer 5 questions — earn 5 coins for each correct answer.</div>
-          <button id="playNowBtn" onClick={handlePlayNow} style={{ width: '100%', padding: '14px', background: 'linear-gradient(135deg,#8b5cf6,#6d28d9)', color: '#fff', border: 'none', borderRadius: 14, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", boxShadow: '0 6px 20px rgba(139,92,246,.3)', marginBottom: 10 }}>
-            Play Now
-          </button>
-          <button onClick={handlePlayLater} style={{ width: '100%', padding: '14px', background: '#f0f6ff', color: '#0078FF', border: '1.5px solid #dbeafe', borderRadius: 14, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
-            Play Later
-          </button>
+
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+        <div style={{ width: 44, height: 44, borderRadius: 12, background: '#e8f1ff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0078FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-      ) : (
-        <div style={{ background: '#fef3c7', border: '1.5px solid #fcd34d', borderRadius: 16, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, color: '#92400e', marginBottom: 4 }}>You already played today.</div>
-          <div style={{ fontSize: 13, color: '#b45309' }}>Come back tomorrow for another round!</div>
+        <div>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: '#0f172a', lineHeight: 1.3 }}>Learn &amp; Play</h2>
+          <p style={{ fontSize: 13, color: '#64748b', lineHeight: 1.5 }}>Build fraud awareness and earn coins</p>
         </div>
-      )}
-      <button onClick={() => setPage('dashboard')} style={{ padding: '12px 28px', background: '#0078FF', color: '#fff', border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
-        ← Back to Dashboard
-      </button>
+      </div>
+
+      {/* Coins bar */}
+      <div style={{ background: '#fff', border: '1.5px solid #e2e8f0', borderRadius: 12, padding: '12px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span style={{ fontSize: 13, color: '#64748b', fontWeight: 500 }}>Your coins</span>
+        <span style={{ fontSize: 20, fontWeight: 700, color: '#0078FF' }}>🪙 {coins}</span>
+      </div>
+
+      {/* Blocks */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        {blocks.map(b => (
+          <div key={b.key} style={{ background: '#fff', border: '1.5px solid #e2e8f0', borderRadius: 14, padding: '16px', display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: '#f0f6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{b.icon}</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#0f172a', marginBottom: 3, lineHeight: 1.4 }}>{b.title}</div>
+              <div style={{ fontSize: 12, color: '#64748b', lineHeight: 1.5, marginBottom: b.action || b.badge ? 10 : 0 }}>{b.desc}</div>
+              {b.badge && !b.action && (
+                <div style={{ fontSize: 11, fontWeight: 600, color: '#92400e', background: '#fef3c7', border: '1px solid #fcd34d', borderRadius: 6, padding: '3px 8px', display: 'inline-block' }}>{b.badge}</div>
+              )}
+              {b.action && (
+                <button id={b.key === 'quiz' ? 'playNowBtn' : undefined} onClick={b.onAction} disabled={b.disabled} style={{ padding: '7px 16px', background: '#0078FF', color: '#fff', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
+                  {b.action}
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: 24 }}>
+        <button onClick={() => setPage('dashboard')} style={{ padding: '10px 24px', background: '#fff', color: '#0078FF', border: '1.5px solid #0078FF', borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
+          ← Back to Dashboard
+        </button>
+      </div>
     </div>
   );
 }
@@ -9060,7 +8894,7 @@ function SmartGuardPage({setPage, user}) {
 function RedeemPage({setPage}) {
   const coins = parseInt(localStorage.getItem('coins') || '0');
   const rewards = [
-    { cost: 75, label: 'Nykaa Voucher', icon: '💄', desc: 'Flat ₹75 off on beauty & skincare' },
+    { cost: 75, label: 'Nykaa Voucher', icon: '💄', desc: '₹75 off on beauty & skincare' },
     { cost: 80, label: 'boAt Voucher', icon: '🎧', desc: '₹80 off on audio & wearables' },
     { cost: 100, label: 'Amazon Voucher', icon: '📦', desc: '₹100 off on any order' },
     { cost: 95, label: 'Flipkart Voucher', icon: '🛒', desc: '₹95 off on fashion & electronics' },
@@ -9081,40 +8915,72 @@ function RedeemPage({setPage}) {
   }
 
   return (
-    <div className="page-pad page-enter" style={{ padding: 24, maxWidth: 480, margin: '0 auto' }}>
-      <div style={{ textAlign: 'center', marginBottom: 28 }}>
-        <div style={{ width: 64, height: 64, borderRadius: 20, background: 'linear-gradient(135deg,#f59e0b,#d97706)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px', boxShadow: '0 8px 24px rgba(245,158,11,.3)' }}>
-          <span style={{ fontSize: 32 }}>🎁</span>
-        </div>
-        <h2 style={{ fontSize: 22, fontWeight: 800, color: '#0f172a', marginBottom: 6 }}>Redeem Rewards</h2>
-        <p style={{ fontSize: 13, color: '#64748b' }}>Spend your hard-earned coins on exciting rewards!</p>
-      </div>
-      <div style={{ background: '#f0f6ff', borderRadius: 16, padding: 18, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 14 }}>
-        <span style={{ fontSize: 36 }}>🪙</span>
+    <div className="page-pad page-enter" style={{ padding: '20px 16px 32px', maxWidth: 480, margin: '0 auto' }}>
+
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+        <div style={{ width: 44, height: 44, borderRadius: 12, background: '#fff8e1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🎁</div>
         <div>
-          <div style={{ fontSize: 12, color: '#64748b', fontWeight: 600 }}>Your Coins</div>
-          <div style={{ fontSize: 28, fontWeight: 800, color: '#0078FF' }}>{coins}</div>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: '#0f172a', lineHeight: 1.3 }}>Redeem Rewards</h2>
+          <p style={{ fontSize: 13, color: '#64748b', lineHeight: 1.5 }}>Use your coins to get vouchers and discounts</p>
         </div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-        {rewards.map(r => (
-          <div key={r.cost + r.label} style={{ padding: '14px', background: coins >= r.cost ? '#f8faff' : '#fef2f2', border: `1.5px solid ${coins >= r.cost ? '#dbeafe' : '#fecaca'}`, borderRadius: 16, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, textAlign: 'center' }}>
-            <div style={{ width: 44, height: 44, borderRadius: 12, background: coins >= r.cost ? '#e8f1ff' : '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>{r.icon}</div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#0f172a', lineHeight: 1.2 }}>{r.label}</div>
-            <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.3 }}>{r.desc}</div>
-            <button onClick={() => handleRedeem(r)} disabled={coins < r.cost} style={{ padding: '7px 12px', background: coins >= r.cost ? 'linear-gradient(135deg,#0078FF,#0055cc)' : '#94a3b8', color: '#fff', border: 'none', borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: coins >= r.cost ? 'pointer' : 'not-allowed', fontFamily: "'DM Sans',sans-serif", whiteSpace: 'nowrap', marginTop: 4 }}>
-              {r.cost} 🪙
-            </button>
-          </div>
-        ))}
+
+      {/* Coins bar */}
+      <div style={{ background: '#fff', border: '1.5px solid #e2e8f0', borderRadius: 12, padding: '12px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span style={{ fontSize: 13, color: '#64748b', fontWeight: 500 }}>Your coins</span>
+        <span style={{ fontSize: 20, fontWeight: 700, color: '#0078FF' }}>🪙 {coins}</span>
       </div>
+
+      {/* Low coins notice */}
       {coins < 70 && (
-        <div style={{ marginTop: 20, padding: '14px', background: '#fef3c7', borderRadius: 14, textAlign: 'center' }}>
-          <span style={{ fontSize: 13, fontWeight: 700, color: '#92400e' }}>Not enough coins — play Learn & Play to earn more!</span>
+        <div style={{ background: '#fef9ec', border: '1.5px solid #fcd34d', borderRadius: 10, padding: '10px 14px', marginBottom: 16, fontSize: 13, color: '#92400e', lineHeight: 1.5 }}>
+          You don't have enough coins yet. Play the quiz to earn more.
         </div>
       )}
+
+      {/* Rewards grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }}>
+        {rewards.map(r => {
+          const canAfford = coins >= r.cost;
+          return (
+            <div key={r.cost + r.label} style={{
+              background: '#fff',
+              border: `1.5px solid ${canAfford ? '#e2e8f0' : '#fee2e2'}`,
+              borderRadius: 14,
+              padding: '14px 12px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 6,
+            }}>
+              <div style={{ fontSize: 24 }}>{r.icon}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#0f172a', lineHeight: 1.3 }}>{r.label}</div>
+              <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.5, flex: 1 }}>{r.desc}</div>
+              <button
+                onClick={() => handleRedeem(r)}
+                disabled={!canAfford}
+                style={{
+                  marginTop: 4,
+                  padding: '7px 0',
+                  width: '100%',
+                  background: canAfford ? '#0078FF' : '#e2e8f0',
+                  color: canAfford ? '#fff' : '#94a3b8',
+                  border: 'none',
+                  borderRadius: 8,
+                  fontSize: 12,
+                  fontWeight: 700,
+                  cursor: canAfford ? 'pointer' : 'not-allowed',
+                  fontFamily: "'DM Sans',sans-serif",
+                }}>
+                {r.cost} 🪙
+              </button>
+            </div>
+          );
+        })}
+      </div>
+
       <div style={{ textAlign: 'center', marginTop: 24 }}>
-        <button onClick={() => setPage('dashboard')} style={{ padding: '12px 28px', background: '#0078FF', color: '#fff', border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
+        <button onClick={() => setPage('dashboard')} style={{ padding: '10px 24px', background: '#fff', color: '#0078FF', border: '1.5px solid #0078FF', borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
           ← Back to Dashboard
         </button>
       </div>
