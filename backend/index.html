@@ -8893,33 +8893,33 @@ function SmartGuardPage({setPage, user}) {
   return (
     <div className="page-pad page-enter" style={{ padding: 24, maxWidth: 500, margin: '0 auto', textAlign: 'center' }}>
       {showModal && canPlay && <SmartGuardGame onComplete={handleGameComplete} />}
-      <div style={{ width: 80, height: 80, borderRadius: 24, background: 'linear-gradient(135deg,#8b5cf6,#6d28d9)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 12px 32px rgba(139,92,246,.35)' }}>
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div style={{ width: 64, height: 64, borderRadius: 16, background: '#8b5cf6', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: '1px solid #c4b5fd' }}>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h2 style={{ fontSize: 26, fontWeight: 800, color: '#0f172a', marginBottom: 8 }}>Learn & Play</h2>
-      <p style={{ fontSize: 14, color: '#64748b', marginBottom: 24, lineHeight: 1.6 }}>Test your fraud detection skills and earn coins!</p>
-      <div style={{ background: '#f0f6ff', borderRadius: 16, padding: 20, marginBottom: 24 }}>
-        <div style={{ fontSize: 14, color: '#64748b', marginBottom: 6 }}>Your Coins</div>
-        <div style={{ fontSize: 36, fontWeight: 800, color: '#0078FF' }}>🪙 {coins}</div>
+      <h2 style={{ fontSize: 22, fontWeight: 800, color: '#0f172a', marginBottom: 4 }}>Learn & Play</h2>
+      <p style={{ fontSize: 14, color: '#64748b', marginBottom: 20, lineHeight: 1.6 }}>Test your fraud detection skills and earn coins!</p>
+      <div style={{ background: '#f8faff', borderRadius: 12, padding: 16, marginBottom: 16, border: '1px solid #dbeafe' }}>
+        <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>Your Coins</div>
+        <div style={{ fontSize: 28, fontWeight: 800, color: '#0078FF' }}>🪙 {coins}</div>
       </div>
       {canPlay ? (
-        <div style={{ background: '#dcfce7', border: '1.5px solid #86efac', borderRadius: 16, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, color: '#166534', marginBottom: 4 }}>{isAdmin ? 'Admin Access — Unlimited Play!' : 'Ready to play!'}</div>
-          <div style={{ fontSize: 13, color: '#15803d', marginBottom: 16 }}>Answer 5 questions — earn 5 coins for each correct answer.</div>
-          <button id="playNowBtn" onClick={handlePlayNow} style={{ width: '100%', padding: '14px', background: 'linear-gradient(135deg,#8b5cf6,#6d28d9)', color: '#fff', border: 'none', borderRadius: 14, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", boxShadow: '0 6px 20px rgba(139,92,246,.3)', marginBottom: 10 }}>
+        <div style={{ background: '#f8faff', borderRadius: 12, padding: 16, marginBottom: 16, border: '1px solid #dbeafe' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: '#1e40af', marginBottom: 4 }}>{isAdmin ? 'Admin Access — Unlimited Play!' : 'Ready to play!'}</div>
+          <div style={{ fontSize: 13, color: '#64748b', marginBottom: 14 }}>Answer 5 questions — earn 5 coins for each correct answer.</div>
+          <button id="playNowBtn" onClick={handlePlayNow} style={{ width: '100%', padding: '12px', background: '#0078FF', color: '#fff', border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", marginBottom: 8 }}>
             Play Now
           </button>
-          <button onClick={handlePlayLater} style={{ width: '100%', padding: '14px', background: '#f0f6ff', color: '#0078FF', border: '1.5px solid #dbeafe', borderRadius: 14, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
+          <button onClick={handlePlayLater} style={{ width: '100%', padding: '12px', background: '#fff', color: '#0078FF', border: '1.5px solid #dbeafe', borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
             Play Later
           </button>
         </div>
       ) : (
-        <div style={{ background: '#fef3c7', border: '1.5px solid #fcd34d', borderRadius: 16, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, color: '#92400e', marginBottom: 4 }}>You already played today.</div>
+        <div style={{ background: '#fef3c7', borderRadius: 12, padding: 16, marginBottom: 16, border: '1px solid #fcd34d' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: '#92400e', marginBottom: 4 }}>You already played today.</div>
           <div style={{ fontSize: 13, color: '#b45309' }}>Come back tomorrow for another round!</div>
         </div>
       )}
-      <button onClick={() => setPage('dashboard')} style={{ padding: '12px 28px', background: '#0078FF', color: '#fff', border: 'none', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
+      <button onClick={() => setPage('dashboard')} style={{ padding: '11px 24px', background: '#0078FF', color: '#fff', border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif" }}>
         ← Back to Dashboard
       </button>
     </div>
@@ -8953,26 +8953,26 @@ function RedeemPage({setPage}) {
   return (
     <div className="page-pad page-enter" style={{ padding: 24, maxWidth: 480, margin: '0 auto' }}>
       <div style={{ textAlign: 'center', marginBottom: 28 }}>
-        <div style={{ width: 64, height: 64, borderRadius: 20, background: 'linear-gradient(135deg,#f59e0b,#d97706)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px', boxShadow: '0 8px 24px rgba(245,158,11,.3)' }}>
-          <span style={{ fontSize: 32 }}>🎁</span>
+        <div style={{ width: 56, height: 56, borderRadius: 16, background: '#f59e0b', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px', border: '1px solid #fcd34d' }}>
+          <span style={{ fontSize: 28 }}>🎁</span>
         </div>
         <h2 style={{ fontSize: 22, fontWeight: 800, color: '#0f172a', marginBottom: 6 }}>Redeem Rewards</h2>
         <p style={{ fontSize: 13, color: '#64748b' }}>Spend your hard-earned coins on exciting rewards!</p>
       </div>
-      <div style={{ background: '#f0f6ff', borderRadius: 16, padding: 18, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 14 }}>
-        <span style={{ fontSize: 36 }}>🪙</span>
+      <div style={{ background: '#f8faff', borderRadius: 12, padding: 16, marginBottom: 20, border: '1px solid #dbeafe', display: 'flex', alignItems: 'center', gap: 14 }}>
+        <span style={{ fontSize: 32 }}>🪙</span>
         <div>
           <div style={{ fontSize: 12, color: '#64748b', fontWeight: 600 }}>Your Coins</div>
-          <div style={{ fontSize: 28, fontWeight: 800, color: '#0078FF' }}>{coins}</div>
+          <div style={{ fontSize: 26, fontWeight: 800, color: '#0078FF' }}>{coins}</div>
         </div>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
         {rewards.map(r => (
-          <div key={r.cost + r.label} style={{ padding: '14px', background: coins >= r.cost ? '#f8faff' : '#fef2f2', border: `1.5px solid ${coins >= r.cost ? '#dbeafe' : '#fecaca'}`, borderRadius: 16, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, textAlign: 'center' }}>
-            <div style={{ width: 44, height: 44, borderRadius: 12, background: coins >= r.cost ? '#e8f1ff' : '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>{r.icon}</div>
+          <div key={r.cost + r.label} style={{ padding: '14px', background: coins >= r.cost ? '#f8faff' : '#fef2f2', border: `1px solid ${coins >= r.cost ? '#dbeafe' : '#fecaca'}`, borderRadius: 12, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, textAlign: 'center' }}>
+            <div style={{ width: 44, height: 44, borderRadius: 10, background: coins >= r.cost ? '#e8f1ff' : '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>{r.icon}</div>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#0f172a', lineHeight: 1.2 }}>{r.label}</div>
             <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.3 }}>{r.desc}</div>
-            <button onClick={() => handleRedeem(r)} disabled={coins < r.cost} style={{ padding: '7px 12px', background: coins >= r.cost ? 'linear-gradient(135deg,#0078FF,#0055cc)' : '#94a3b8', color: '#fff', border: 'none', borderRadius: 10, fontSize: 12, fontWeight: 700, cursor: coins >= r.cost ? 'pointer' : 'not-allowed', fontFamily: "'DM Sans',sans-serif", whiteSpace: 'nowrap', marginTop: 4 }}>
+            <button onClick={() => handleRedeem(r)} disabled={coins < r.cost} style={{ padding: '7px 12px', background: coins >= r.cost ? '#0078FF' : '#94a3b8', color: '#fff', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: coins >= r.cost ? 'pointer' : 'not-allowed', fontFamily: "'DM Sans',sans-serif", whiteSpace: 'nowrap', marginTop: 4 }}>
               {r.cost} 🪙
             </button>
           </div>
