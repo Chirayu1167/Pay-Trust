@@ -7994,17 +7994,6 @@ function ReportIssueModal({tx, user, onClose, onSubmit}){
               ))}
             </div>
 
-            {/* Severity Preview */}
-            {sm && (
-              <div style={{background:sm.bg,border:`1.5px solid ${sm.border}`,borderRadius:12,padding:"10px 14px",marginBottom:16,display:"flex",alignItems:"center",gap:10}}>
-                <span style={{fontSize:18}}>{sm.emoji}</span>
-                <div>
-                  <div style={{fontSize:12,fontWeight:800,color:sm.color}}>{sm.label} — {sm.resolution}</div>
-                  <div style={{fontSize:11,color:sm.color,opacity:0.8}}>{sm.sublabel}</div>
-                </div>
-              </div>
-            )}
-
             {/* Transaction Summary */}
             <div style={{background:"#f8faff",borderRadius:14,padding:"14px 16px",marginBottom:18,
               border:"1px solid #e8f1ff"}}>
